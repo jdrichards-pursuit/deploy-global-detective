@@ -45,7 +45,7 @@ function App() {
         <Route path="/leaderboard" element={<LeaderboardPage />} />
         <Route path="/achievements" element={<AchievementsPage />} />
         <Route path="/countries" element={<CountriesPage />} />
-        <Route path="/countries/:countries_id" element={<CaseFilesPage />} />
+        <Route path="/countries/:countries_name" element={<CaseFilesPage />} />
         <Route path="/countries/:countries_name/:case_number" element={<CaseDetailsPage />} />
         <Route path="/countries/:countries_name/:case_number/photos" element={<CasePhotosPage />} />
         <Route path="/countries/:countries_name/:case_number/evidence" element={<QuestionPage />} />
