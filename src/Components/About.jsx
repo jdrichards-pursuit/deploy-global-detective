@@ -20,7 +20,7 @@ const About = () => {
             />
           </a>
           <p className="linkedin-link">
-         <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
+         <a href="https://www.linkedin.com/in/anitaowenny/" target="_blank" rel="noopener noreferrer">
          Connect with her on LinkedIn
          </a>
          </p>
@@ -39,7 +39,7 @@ const About = () => {
             />
           </a>
           <p className="linkedin-link">
-         <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
+         <a href="https://www.linkedin.com/in/armando-pires-aba0a121b/" target="_blank" rel="noopener noreferrer">
          Connect with him on LinkedIn
          </a>
          </p>
@@ -57,7 +57,7 @@ const About = () => {
             />
           </a>
           <p className="linkedin-link">
-         <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
+         <a href="https://www.linkedin.com/in/brendasotoct/" target="_blank" rel="noopener noreferrer">
          Connect with her on LinkedIn
          </a>
          </p>
@@ -75,7 +75,7 @@ const About = () => {
             />
           </a>
           <p className="linkedin-link">
-         <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
+         <a href="https://www.linkedin.com/in/luis-tejada-56538b271/" target="_blank" rel="noopener noreferrer">
          Connect with him on LinkedIn
          </a>
          </p>
@@ -93,7 +93,7 @@ const About = () => {
             />
           </a>
           <p className="linkedin-link">
-         <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
+         <a href="https://www.linkedin.com/in/mrmarlon/" target="_blank" rel="noopener noreferrer">
          Connect with him on LinkedIn
          </a>
          </p>
