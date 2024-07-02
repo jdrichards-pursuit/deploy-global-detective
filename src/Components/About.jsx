@@ -8,72 +8,77 @@ const About = () => {
           <li className="developer">
           <h2>Anita</h2>
           <a
-            href="https://github.com/KenCab123/"
+            href="https://github.com/AnitaOwen"
             className="github-link"
             target="_blank"
           >
             <img
-              src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1716214563/Screenshot_2024-04-01_at_3.22.13_PM_cghw1j.png"
+              src="?"
               alt="Anita!"
               width="300"
               height="300"
             />
           </a>
-          <p className="fun-fact">
-            {" "}
-            <b>Fun Fact:</b> "?" 🤷🏾‍♂️
-          </p>
+          <p className="linkedin-link">
+         <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
+         Connect with her on LinkedIn
+         </a>
+         </p>
+
           <h2>Armando</h2>
           <a
-            href="https://github.com/TimNatal1887/"
+            href="https://github.com/ArmandoPires103"
             className="github-link"
             target="_blank"
           >
             <img
-              src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1716221799/IMG_8993_kkwi5i.jpg"
+              src="?"
               alt="Armando!"
               width="300"
               height="300"
             />
           </a>
-          <p className="fun-fact">
-            {" "}
-            <b>Fun Fact:</b> "?" 🤷🏾‍♂️
-          </p>
+          <p className="linkedin-link">
+         <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
+         Connect with him on LinkedIn
+         </a>
+         </p>
           <h2>Brenda</h2>
           <a
-            href="https://github.com/KenCab123/"
+            href="https://github.com/BSoto85"
             className="github-link"
             target="_blank"
           >
             <img
-              src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1716214563/Screenshot_2024-04-01_at_3.22.13_PM_cghw1j.png"
+              src="?"
               alt="Brenda!"
               width="300"
               height="300"
             />
           </a>
-          <p className="fun-fact">
-            {" "}
-            <b>Fun Fact:</b> "?" 🤷🏾‍♂️
-          </p>
+          <p className="linkedin-link">
+         <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
+         Connect with her on LinkedIn
+         </a>
+         </p>
           <h2>Luis</h2>
           <a
-            href="https://github.com/TimNatal1887/"
+            href="https://github.com/Blui322"
             className="github-link"
             target="_blank"
           >
             <img
-              src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1716221799/IMG_8993_kkwi5i.jpg"
+              src="?"
               alt="Luis!"
               width="300"
               height="300"
             />
           </a>
-          <p className="fun-fact">
-            {" "}
-            <b>Fun Fact:</b> "?" 🤷🏾‍♂️
-          </p>
+          <p className="linkedin-link">
+         <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
+         Connect with him on LinkedIn
+         </a>
+         </p>
           <h2>Marlon</h2>
           <a
             href="https://github.com/MarlonPelau"
@@ -81,16 +86,17 @@ const About = () => {
             target="_blank"
           >
             <img
-              src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Profile/v1712883521/pelau_yfhd9e.png"
+              src="?"
               alt="Marlon!"
               width="300"
               height="300"
             />
           </a>
-          <p className="fun-fact">
-            {" "}
-            <b>Fun Fact:</b> "?" 🤷🏾‍♂️
-          </p>
+          <p className="linkedin-link">
+         <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
+         Connect with him on LinkedIn
+         </a>
+         </p>
         </li>
       </ul>
     </div>
