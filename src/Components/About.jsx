@@ -50,7 +50,7 @@ const About = () => {
             target="_blank"
           >
             <img
-              src="?"
+              src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1711388131/TeaWhips-Brenda_ybojtq.jpg"
               alt="Brenda!"
               width="300"
               height="300"
