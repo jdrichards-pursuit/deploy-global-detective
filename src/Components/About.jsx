@@ -32,7 +32,7 @@ const About = () => {
             target="_blank"
           >
             <img
-              src="?"
+              src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1720020802/Armando_Pires_2_lljm1y.jpg"
               alt="Armando!"
               width="300"
               height="300"
@@ -68,7 +68,7 @@ const About = () => {
             target="_blank"
           >
             <img
-              src="?"
+              src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1720021062/Luis_Tejada_2_xyauz4.jpg"
               alt="Luis!"
               width="300"
               height="300"
