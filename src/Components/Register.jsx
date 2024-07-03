@@ -10,6 +10,7 @@ import { auth } from "../helpers/firebase";
 import { register } from "../helpers/register";
 
 function Register() {
+
   const [newUser, setNewUser] = useState({
     email: "",
     password: "",
@@ -62,7 +63,7 @@ function Register() {
           toast.success("User Registered Successfully!!", {
             position: "top-center",
           });
-          navigate("/profile");
+          navigate("/");
         } else {
           toast.error("User Not Found", {
             position: "top-center",
