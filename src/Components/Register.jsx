@@ -15,6 +15,7 @@ function Register() {
     password: "",
     first_name: "",
     last_name: "",
+    dob: "",
   });
 
   const navigate = useNavigate();
@@ -28,7 +29,7 @@ function Register() {
       email: "",
       first_name: "",
       last_name: "",
-      photo: "",
+      dob: "",
     });
   };
 
@@ -127,6 +128,18 @@ function Register() {
               id="password"
               name="password"
               value={newUser.password}
+              onChange={handleChange}
+              required
+            />
+          </label>
+
+          <label htmlFor="dob">
+            Birthday:{" "}
+            <input
+              type="date"
+              id="dob"
+              name="dob"
+              value={newUser.dob}
               onChange={handleChange}
               required
             />
