@@ -86,7 +86,7 @@ const About = () => {
             target="_blank"
           >
             <img
-              src="?"
+              src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1712883521/pelau_yfhd9e.jpg"
               alt="Marlon!"
               width="300"
               height="300"
