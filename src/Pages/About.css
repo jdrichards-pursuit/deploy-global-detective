@@ -30,20 +30,20 @@
   
   .about-us {
     font-size: 2.5em;
-    color: lavenderblush;
+    color: #b0babf;
     text-align: center;
   }
   
   h2 {
     font-size: 1.5em;
-    color: #555;
+    color: #b78c38;
   }
   
   .github-link {
     display: block;
     margin: 15px 0;
     text-decoration: none;
-    color: #0366d6;
+    color: #466273;
   }
   
   .github-link:hover {
@@ -52,7 +52,7 @@
   
   .linkedin-link {
     font-size: 1em;
-    color: #777;
+    color: #253759;
   }
   
   .developer h2 {
