@@ -13,7 +13,7 @@ const About = () => {
             target="_blank"
           >
             <img
-              src="?"
+              src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1720015246/AnitaMagentaphoto1_dt1uea.jpg"
               alt="Anita!"
               width="300"
               height="300"
