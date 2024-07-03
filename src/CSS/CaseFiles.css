@@ -1,0 +1,32 @@
+.CaseFilesPage {
+    padding: 20px;
+  }
+  
+  .main-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .case-files-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .case-file-container {
+    padding: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .case-file-container:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .case-file-details {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  

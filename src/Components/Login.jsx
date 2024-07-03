@@ -35,7 +35,7 @@ function Login() {
 
       // you do not have to create a login in the backend because firebase is handling it.
       // when you navigate to profile, you will see a fetch for the user.
-      navigate('/profile')
+      navigate('/')
     } catch (error) {
       console.log(error.message)
 

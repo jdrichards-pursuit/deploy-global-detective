@@ -5,10 +5,13 @@ import { ToastContainer } from 'react-toastify'
 import { auth } from './helpers/firebase'
 
 import Login from './Components/Login'
-import SignUp from './Components/Register'
-import Profile from './Components/Profile'
+import SignUpView from './Pages/SignUpView.jsx'
+// import Profile from './Components/Profile'
 import Test from './Components/Test'
 import HomePage from './Pages/HomePage'
+import CountriesPage from './Pages/CountriesPage.jsx'
+import LeaderboardPage from './Pages/LeaderboardPage.jsx'
+import CaseFilesPage from './Pages/CaseFilesPage.jsx'
 
 import 'react-toastify/dist/ReactToastify.css'
 import './App.css'
@@ -38,19 +41,19 @@ function App() {
         <Route path="/" element={<HomePage />}/>
         <Route path="/test" element={user ? <Test /> : <Login />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<SignUp />} />
-        <Route path="/profile" element={<ProfilePage />} />
-        <Route path="/help" element={<HelpPage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/leaderboard" element={<LeaderboardPage />} />
-        <Route path="/achievements" element={<AchievementsPage />} />
+        <Route path="/register" element={<SignUpView />} />
+        {/* <Route path="/profile" element={<ProfilePage />} /> */}
+        {/* <Route path="/help" element={<HelpPage />} />
+        <Route path="/about" element={<AboutPage />} /> */}
+        {/* <Route path="/leaderboard" element={<LeaderboardPage />} /> */}
+        {/* <Route path="/achievements" element={<AchievementsPage />} /> */}
         <Route path="/countries" element={<CountriesPage />} />
-        <Route path="/countries/:countries_name" element={<CaseFilesPage />} />
-        <Route path="/countries/:countries_name/:case_number" element={<CaseDetailsPage />} />
+        <Route path="/countries/:countryId" element={<CaseFilesPage />} />
+        {/* <Route path="/countries/:countries_name/:case_number" element={<CaseDetailsPage />} />
         <Route path="/countries/:countries_name/:case_number/photos" element={<CasePhotosPage />} />
         <Route path="/countries/:countries_name/:case_number/evidence" element={<QuestionPage />} />
         <Route path="/countries/:countries_name/:case_number/results" element={<ResultPage />} />
-        <Route path="*" element={<FourOFourPage />} />
+        <Route path="*" element={<FourOFourPage />} /> */}
       </Routes>
       <ToastContainer />
     </div>

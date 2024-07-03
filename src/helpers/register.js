@@ -8,11 +8,11 @@ export const register = async (user, photoURL, uid) => {
     },
     // every field that is in the backend query should be here as well
     body: JSON.stringify({
-      uid,
-      username: '',
+      uid: uid,
       first_name: user.displayName || user.first_name,
       last_name: user.last_name || '',
       email: user.email,
+      dob: user.dob,
       photo: photoURL || '',
     }),
   }
