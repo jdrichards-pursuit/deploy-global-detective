@@ -144,28 +144,28 @@ Many routes were used for the following files below:
 
 ## ABOUT US!
 <p align="center">
-  <b>Anita Owen:</b> <a href="https://github.com/MarlonPelau">GitHub</a>
+  <b>Anita Owen:</b> <a href="https://github.com/AnitaOwen">GitHub</a>
 </p>
 <p align="center">
-  <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Profile/v1712883521/pelau_yfhd9e.png" alt="Marlon!" width="300" height="300">
+  <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1720015246/AnitaMagentaphoto1_dt1uea.jpg" alt="Anita!" width="300" height="300">
 
 <p align="center">
-  <b>Armando Pires:</b> <a href="https://github.com/MarlonPelau">GitHub</a>
+  <b>Armando Pires:</b> <a href="https://github.com/ArmandoPires103">GitHub</a>
 </p>
 <p align="center">
-  <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Profile/v1712883521/pelau_yfhd9e.png" alt="Marlon!" width="300" height="300">
+  <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1720020802/Armando_Pires_2_lljm1y.jpg" alt="Armando!" width="300" height="300">
 
 <p align="center">
-  <b>Brenda Soto:</b> <a href="https://github.com/MarlonPelau">GitHub</a>
+  <b>Brenda Soto:</b> <a href="https://github.com/BSoto85">GitHub</a>
 </p>
 <p align="center">
-  <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Profile/v1712883521/pelau_yfhd9e.png" alt="Marlon!" width="300" height="300">
+  <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1711388131/TeaWhips-Brenda_ybojtq.jpg" alt="Brenda!" width="300" height="300">
 
 <p align="center">
-  <b>Luis Tejada:</b> <a href="https://github.com/MarlonPelau">GitHub</a>
+  <b>Luis Tejada:</b> <a href="https://github.com/Blui322">GitHub</a>
 </p>
 <p align="center">
-  <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Profile/v1712883521/pelau_yfhd9e.png" alt="Marlon!" width="300" height="300">
+  <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1720021062/Luis_Tejada_2_xyauz4.jpg" alt="Luis!" width="300" height="300">
 
 <p align="center">
   <b>Marlon Regis:</b> <a href="https://github.com/MarlonPelau">GitHub</a>
