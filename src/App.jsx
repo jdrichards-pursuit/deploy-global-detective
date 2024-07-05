@@ -12,7 +12,7 @@ import HomePage from './Pages/HomePage'
 import CountriesPage from './Pages/CountriesPage.jsx'
 import LeaderboardPage from './Pages/LeaderboardPage.jsx'
 import CaseFilesPage from './Pages/CaseFilesPage.jsx'
-
+import AboutPage from './Pages/AboutPage'
 import 'react-toastify/dist/ReactToastify.css'
 import './App.css'
 
@@ -43,8 +43,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<SignUpView />} />
         {/* <Route path="/profile" element={<ProfilePage />} /> */}
-        {/* <Route path="/help" element={<HelpPage />} />
-        <Route path="/about" element={<AboutPage />} /> */}
+        {/* <Route path="/help" element={<HelpPage />} /> */}
+        <Route path="/about" element={<AboutPage />} />
         {/* <Route path="/leaderboard" element={<LeaderboardPage />} /> */}
         {/* <Route path="/achievements" element={<AchievementsPage />} /> */}
         <Route path="/countries" element={<CountriesPage />} />

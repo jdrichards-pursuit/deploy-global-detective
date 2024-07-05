@@ -1,5 +1,5 @@
 import react from "react";
-import "../Pages/About.css"
+import "../CSS/About.css";
 const About = () => {
     return (
       <div className="about-container">
@@ -12,7 +12,7 @@ const About = () => {
             className="github-link"
             target="_blank"
           >
-            <img
+            <img className="dev-photo"
               src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1720015246/AnitaMagentaphoto1_dt1uea.jpg"
               alt="Anita!"
               width="300"
@@ -36,7 +36,7 @@ const About = () => {
             className="github-link"
             target="_blank"
           >
-            <img
+            <img className="dev-photo"
               src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1720020802/Armando_Pires_2_lljm1y.jpg"
               alt="Armando!"
               width="300"
@@ -55,7 +55,7 @@ const About = () => {
             className="github-link"
             target="_blank"
           >
-            <img
+            <img className="dev-photo"
               src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1711388131/TeaWhips-Brenda_ybojtq.jpg"
               alt="Brenda!"
               width="300"
@@ -74,7 +74,7 @@ const About = () => {
             className="github-link"
             target="_blank"
           >
-            <img
+            <img className="dev-photo"
               src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1720021062/Luis_Tejada_2_xyauz4.jpg"
               alt="Luis!"
               width="300"
@@ -93,7 +93,7 @@ const About = () => {
             className="github-link"
             target="_blank"
           >
-            <img
+            <img className="dev-photo"
               src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1712883521/pelau_yfhd9e.jpg"
               alt="Marlon!"
               width="300"
