@@ -12,6 +12,7 @@ import HomePage from './Pages/HomePage'
 import CountriesPage from './Pages/CountriesPage.jsx'
 import LeaderboardPage from './Pages/LeaderboardPage.jsx'
 import CaseFilesPage from './Pages/CaseFilesPage.jsx'
+import CaseDetailsPage from './Pages/CaseDetailsPage.jsx'
 
 import 'react-toastify/dist/ReactToastify.css'
 import './App.css'
@@ -23,6 +24,23 @@ function App() {
       setUser(user)
     })
   })
+  // PROP FOR COUNTRY FETCH
+  const [countries, setCountries] = useState([]);
+
+  useEffect(() => {
+    const fetchCountries = async () => {
+      try {
+        const response = await fetch('http://localhost:3003/api/countries');
+        const data = await response.json();
+        setCountries(data);
+      } catch (error) {
+        console.error('Error fetching countries:', error);
+      }
+    };
+
+    fetchCountries();
+  }, []);
+
   return (
     <div>
       <Routes
@@ -39,18 +57,18 @@ function App() {
           element={user ? <Navigate to="/profile" /> : <Login />}
         /> */}
         <Route path="/" element={<HomePage />}/>
-        {/* <Route path="/test" element={user ? <Test /> : <Login />} />
+        <Route path="/test" element={user ? <Test /> : <Login />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<SignUp />} /> */}
+        <Route path="/register" element={<SignUp />} />
         {/* <Route path="/profile" element={<ProfilePage />} /> */}
         {/* <Route path="/help" element={<HelpPage />} />
         <Route path="/about" element={<AboutPage />} /> */}
         <Route path="/leaderboard" element={<LeaderboardPage />} />
         {/* <Route path="/achievements" element={<AchievementsPage />} /> */}
-        <Route path="/countries" element={<CountriesPage />} />
-        <Route path="/countries/:countryId" element={<CaseFilesPage />} />
-        {/* <Route path="/countries/:countries_name/:case_number" element={<CaseDetailsPage />} />
-        <Route path="/countries/:countries_name/:case_number/photos" element={<CasePhotosPage />} />
+        <Route path="/countries" element={<CountriesPage countries={countries}/>} />
+        <Route path="/countries/:countryId/casefiles" element={<CaseFilesPage countries={countries}/>} />
+        <Route exact path="/countries/:countryId/case_files/:caseFileId" element={<CaseDetailsPage />} />
+        {/* <Route path="/countries/:countries_name/:case_number/photos" element={<CasePhotosPage />} />
         <Route path="/countries/:countries_name/:case_number/evidence" element={<QuestionPage />} />
         <Route path="/countries/:countries_name/:case_number/results" element={<ResultPage />} />
         <Route path="*" element={<FourOFourPage />} /> */}
