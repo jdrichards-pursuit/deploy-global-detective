@@ -7,6 +7,12 @@ const About = () => {
         <ul className="developer-pro">
           <li className="developer">
           <h2>Anita</h2>
+          <p className="linkedin-link"></p>
+          <p className="linkedin-link">
+         <a href="https://www.linkedin.com/in/anitaowenny/" target="_blank" rel="noopener noreferrer">
+         Connect with her on LinkedIn
+         </a>
+         </p>
           <a
             href="https://github.com/AnitaOwen"
             className="github-link"
@@ -19,12 +25,7 @@ const About = () => {
               height="300"
             />
           </a>
-          <p className="linkedin-link">
-         <a href="https://www.linkedin.com/in/anitaowenny/" target="_blank" rel="noopener noreferrer">
-         Connect with her on LinkedIn
-         </a>
-         </p>
-
+          
           <h2>Armando</h2>
           <p className="linkedin-link">
          <a href="https://www.linkedin.com/in/armando-pires-aba0a121b/" target="_blank" rel="noopener noreferrer">
