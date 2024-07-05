@@ -1,32 +1,67 @@
 .CaseFilesPage {
-    padding: 20px;
+    text-align: center;
+    padding-top: 30px;
   }
   
-  .main-content {
-    max-width: 800px;
-    margin: 0 auto;
+  .CaseFilesPage h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
   }
   
   .case-files-list {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
+    gap: 20px;
   }
   
-  .case-file-container {
+  .case-file-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    border: 2px solid #ccc;
     padding: 10px;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #253759;
   }
   
-  .case-file-container:hover {
+  .case-file-item:hover {
     background-color: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   
-  .case-file-details {
-    margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
+  .case-file-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .case-label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .case-file-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+  }
+  
+  .case-file-content h2 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #c0d9d9;
+  }
+  
+  .case-file-content p {
+    font-size: 14px;
+    color: #c0d9d9;
+    margin: 0;
   }
   
