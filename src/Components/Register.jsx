@@ -10,11 +10,13 @@ import { auth } from "../helpers/firebase";
 import { register } from "../helpers/register";
 
 function Register() {
+
   const [newUser, setNewUser] = useState({
     email: "",
     password: "",
     first_name: "",
     last_name: "",
+    dob: "",
   });
 
   const navigate = useNavigate();
@@ -28,7 +30,7 @@ function Register() {
       email: "",
       first_name: "",
       last_name: "",
-      photo: "",
+      dob: "",
     });
   };
 
@@ -61,7 +63,7 @@ function Register() {
           toast.success("User Registered Successfully!!", {
             position: "top-center",
           });
-          navigate("/profile");
+          navigate("/");
         } else {
           toast.error("User Not Found", {
             position: "top-center",
@@ -127,6 +129,18 @@ function Register() {
               id="password"
               name="password"
               value={newUser.password}
+              onChange={handleChange}
+              required
+            />
+          </label>
+
+          <label htmlFor="dob">
+            Birthday:{" "}
+            <input
+              type="date"
+              id="dob"
+              name="dob"
+              value={newUser.dob}
               onChange={handleChange}
               required
             />

@@ -5,7 +5,7 @@ import { ToastContainer } from 'react-toastify'
 import { auth } from './helpers/firebase'
 
 import Login from './Components/Login'
-import SignUp from './Components/Register'
+import SignUpView from './Pages/SignUpView.jsx'
 // import Profile from './Components/Profile'
 import Test from './Components/Test'
 import HomePage from './Pages/HomePage'
@@ -59,11 +59,12 @@ function App() {
         <Route path="/" element={<HomePage />}/>
         <Route path="/test" element={user ? <Test /> : <Login />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<SignUp />} />
+        <Route path="/register" element={<SignUpView />} />
+
         {/* <Route path="/profile" element={<ProfilePage />} /> */}
         {/* <Route path="/help" element={<HelpPage />} />
         <Route path="/about" element={<AboutPage />} /> */}
-        <Route path="/leaderboard" element={<LeaderboardPage />} />
+        {/* <Route path="/leaderboard" element={<LeaderboardPage />} /> */}
         {/* <Route path="/achievements" element={<AchievementsPage />} /> */}
         <Route path="/countries" element={<CountriesPage countries={countries}/>} />
         <Route path="/countries/:countryId/casefiles" element={<CaseFilesPage countries={countries}/>} />
