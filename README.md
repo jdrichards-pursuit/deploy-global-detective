@@ -102,14 +102,14 @@ Many routes were used for the following files below:
 
 ## User Personas:
 
-<img src="?" alt="?!" width="300" height="300">
+<img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1720465536/GlobalAgent-Sarah_wdlnqn.webp" alt="Sarah!" width="300" height="300">
 
-1. Meet `?`, **?** ?.
+1. Meet `Sarah Thompson`, **Sarah** is a 42-year-old mother of two, including 15-year-old Max, a high school sophomore. Sarah, a marketing executive, values education and staying informed about world events. She's increasingly concerned about Max's lack of interest in current affairs and his tendency to spend hours on social media and video games. Max finds traditional news sources boring and overwhelming. Sarah reaches out to Max's Social Studies teacher for advice on making current events more appealing to teenagers. She's looking for interactive, engaging tools that can compete with Max's favorite apps while sneaking in educational content. When the teacher recommends the `Global Agent` web app, Sarah immediately sees a blend of Max's love for gaming with her desire for him to learn about the world. Sarah hopes Max will enjoy using this app, sparking his curiosity about global issues and improving his critical thinking skills.
 
 
-<img src="?" alt="?!" width="300" height="300">
+<img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1720466199/GlobalAgent-Alex_Chen_uxq1hf.jpg" alt="Alex!" width="300" height="300">
 
-2. Meet `?` -- **?** ?.
+2. Meet `Alex Chen` -- **Alex**, a 14yo 8th grader, represents the ideal user for the `Global Agent` app. Tech-savvy and curious about world events, Alex seeks an engaging way to learn about current affairs while improving critical thinking skills. Motivated by a competitive drive and a love for solving mysteries, Alex enjoys the game's interactive elements, visual progress tracking, and variety of challenges. Despite having a short attention span for traditional news, an eager Alex checks the app daily, tackling quick cases on weekdays and longer investigations on weekends. The game helps Alex balance educational content with entertainment, while providing a platform to discuss current events with peers and family.
 
 
 ## ABOUT US!
@@ -152,21 +152,22 @@ The following are examples of the `Global Agent` app being built at different st
 <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1720446301/Screenshot_2024-07-08_at_9.44.37_AM_xc7o0r.png" alt="workflow" width="800" height="400">
 
 
-WIREFRAMES (mobile) for different pages throughout the `Global Agent` app.
+*WIREFRAMES* (mobile) for different pages throughout the `Global Agent` app.
 
 <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1720446495/Screenshot_2024-07-08_at_9.47.44_AM_frjnxv.png" alt="Landing/Home" width="250" height="400">
 
 <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1720447060/Screenshot_2024-07-08_at_9.57.09_AM_tnzpse.png" alt="Sign-Up" width="250" height="400">
 
-<img src="?" alt="?" width="250" height="400">
+<img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1720463960/Screenshot_2024-07-08_at_2.38.48_PM_q8fcic.png" alt="Achievements View" width="250" height="400">
 
-<img src="?" alt="?" width="250" height="400">
-
-<img src="?" alt="?" width="250" height="400">
+<img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1720463960/Screenshot_2024-07-08_at_2.38.48_PM_q8fcic.png" alt="Leaderboard View" width="250" height="400">
 
 <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1720448616/Screenshot_2024-07-08_at_10.23.04_AM_hos26b.png" alt="Countries View" width="250" height="400">
 
-ERDs (tables)
+<img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1720463960/Screenshot_2024-07-08_at_2.38.48_PM_q8fcic.png" alt="Case File View" width="250" height="400">
+
+
+*ERDs* (tables)
 
 <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1720446179/Screenshot_2024-07-08_at_9.41.54_AM_bd51nt.png" alt="Global Agent" width="600" height="400">
 
