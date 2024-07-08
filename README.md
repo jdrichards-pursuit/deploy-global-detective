@@ -81,29 +81,7 @@ Our efforts to build this app utilized the following below **Project Tools & Ski
 ## ROUTES
 Many routes were used for the following files below:
 
--Index
-
--About
-
--LandingPage
-
--EditForm
-
--Dashboard
-
--NewForm
-
--ProtectedRoute
-
--Four0Four
-
--NavBar
-
--Show
-
--Login
-
--Register
+-
 
 
 <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1720199090/GlobalAgent-top_secret_nox0i7.png" alt="top secret!" width="600" height="400">
@@ -113,21 +91,13 @@ Many routes were used for the following files below:
 
 1. The app should be free to download, informative and be available on any mobile device.
 
-2. As a user, the search button must directly lead me to platforms that correlate to my filtered request.
+2. As a user, ?
 
-3. As a user, signing up to log-in, must be clearly advantageous than anyone who doesn't.
+3. As a user, ?
 
-4. As a repeat user, at least two platforms that help me discovery new music, should be included.
+4. As a repeat user, ?
 
-5. As an avid user, the app needs to point me in the right direction for platforms that build community.
-
-6. As a user, I want a platform highlighting upcoming concerts/shows before they're in my area.
-
-7. As a user, I want to a platform that alerts me on new LP/single releases.
-
-8. As a user, I want to be able to also search for different platforms based on varying musical needs.
-
-9. As a user, there must be a diverse range of platform options to peruse through!
+5. As an avid user, ?
 
 
 ## User Personas:
@@ -179,47 +149,39 @@ Some of us just want to code!
 ### Visual Examples
 The following are examples of the `Global Agent` app being built at different stages. Here are just a few rough and sketchy images showing the process. The entire navigation flow aims to move in this direction directly below.
 
-<img src="?" alt="workflow" width="400" height="400">
+<img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1720446301/Screenshot_2024-07-08_at_9.44.37_AM_xc7o0r.png" alt="workflow" width="800" height="400">
 
 
-WIREFRAMES (desktop and mobile) further below here.
+WIREFRAMES (mobile) for different pages throughout the `Global Agent` app.
 
-<img src="?" alt="Landing" width="400" height="400">
+<img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1720446495/Screenshot_2024-07-08_at_9.47.44_AM_frjnxv.png" alt="Landing/Home" width="250" height="400">
 
-<img src="?" alt="Home/Index page" width="400" height="400">
+<img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1720447060/Screenshot_2024-07-08_at_9.57.09_AM_tnzpse.png" alt="Sign-Up" width="250" height="400">
 
-<img src="?" alt="?" width="400" height="400">
+<img src="?" alt="?" width="250" height="400">
 
-<img src="?" alt="?" width="400" height="400">
+<img src="?" alt="?" width="250" height="400">
 
-<img src="?" alt="?" width="900" height="300">
+<img src="?" alt="?" width="250" height="400">
 
-<img src="?" alt="?" width="400" height="800">
-
-Global Agent (preliminary screenshots of data, different pages, etc.)
-
-<img src="?" alt="?" width="400" height="400">
-
-<img src="?" alt="?" width="400" height="400">
-
-<img src="?" alt="Login" width="400" height="400">
-
-<img src="?" alt="About" width="400" height="400">
+<img src="?" alt="?" width="250" height="400">
 
 ERDs (tables)
 
-<img src="?" alt="Global Agent" width="400" height="400">
+<img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1720446179/Screenshot_2024-07-08_at_9.41.54_AM_bd51nt.png" alt="Global Agent" width="600" height="400">
 
 
 # DEPLOYMENT (& SLIDE) LINKS
 
-### Frontend Deployment: ?
+### Frontend Deployment: https://github.com/BSoto85/global-agent-frontend
 **my netlify.com link**: ?
 
-### Backend Deployment: ?
+### Backend Deployment: https://github.com/BSoto85/global-agent-backend
 **my render.com link**: ?
 
-**ERD link**: ?
+**ERD**: https://dbdiagram.io/d/GLOBAL-AGENT-667b0cd79939893dae3ecffd
+
+**Wireframe** & **Workflow**: https://www.figma.com/board/uXvEwPA6D7COhDQfPEOi4g/Game-Wireframes?node-id=0-1&t=smUWPUZvSoTq0Hw9-0
 
 **SLIDE**: <button><a href="?">PLAY!</a></button>
 

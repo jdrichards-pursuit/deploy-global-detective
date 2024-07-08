@@ -10,7 +10,7 @@ const About = () => {
           <p className="linkedin-link"></p>
           <p className="linkedin-link">
          <a href="https://www.linkedin.com/in/anitaowenny/" target="_blank" rel="noopener noreferrer">
-         Connect with her on LinkedIn
+         Connect on LinkedIn
          </a>
          </p>
           <a
@@ -29,7 +29,7 @@ const About = () => {
           <h2>Armando</h2>
           <p className="linkedin-link">
          <a href="https://www.linkedin.com/in/armando-pires-aba0a121b/" target="_blank" rel="noopener noreferrer">
-         Connect with him on LinkedIn
+         Connect on LinkedIn
          </a>
          </p>
           <a
@@ -48,7 +48,7 @@ const About = () => {
           <h2>Brenda</h2>
           <p className="linkedin-link">
          <a href="https://www.linkedin.com/in/brendasotoct/" target="_blank" rel="noopener noreferrer">
-         Connect with her on LinkedIn
+         Connect on LinkedIn
          </a>
          </p>
           <a
@@ -67,7 +67,7 @@ const About = () => {
           <h2>Luis</h2>
           <p className="linkedin-link">
          <a href="https://www.linkedin.com/in/luis-tejada-56538b271/" target="_blank" rel="noopener noreferrer">
-         Connect with him on LinkedIn
+         Connect on LinkedIn
          </a>
          </p>
           <a
@@ -86,7 +86,7 @@ const About = () => {
           <h2>Marlon</h2>
           <p className="linkedin-link">
          <a href="https://www.linkedin.com/in/mrmarlon/" target="_blank" rel="noopener noreferrer">
-         Connect with him on LinkedIn
+         Connect on LinkedIn
          </a>
          </p>
           <a
