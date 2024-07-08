@@ -164,7 +164,7 @@ WIREFRAMES (mobile) for different pages throughout the `Global Agent` app.
 
 <img src="?" alt="?" width="250" height="400">
 
-<img src="?" alt="?" width="250" height="400">
+<img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1720448616/Screenshot_2024-07-08_at_10.23.04_AM_hos26b.png" alt="Countries View" width="250" height="400">
 
 ERDs (tables)
 
