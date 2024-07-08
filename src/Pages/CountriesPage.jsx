@@ -1,26 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../Components/NavBar';
 import '../CSS/CountriesPage.css';
 
-const CountriesPage = () => {
-  const [countries, setCountries] = useState([]);
+const CountriesPage = ({ countries }) => {
   const [selectedCountryId, setSelectedCountryId] = useState('');
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const fetchCountries = async () => {
-      try {
-        const response = await fetch('http://localhost:3003/api/countries');
-        const data = await response.json();
-        setCountries(data);
-      } catch (error) {
-        console.error('Error fetching countries:', error);
-      }
-    };
-
-    fetchCountries();
-  }, []);
 
   const handleCountryClick = (countryId) => {
     setSelectedCountryId(countryId);
@@ -28,7 +13,7 @@ const CountriesPage = () => {
 
   const handleSubmit = () => {
     if (selectedCountryId) {
-      navigate(`/countries/${selectedCountryId}`);
+      navigate(`/countries/${selectedCountryId}/casefiles`);
     } else {
       alert('Please select a country to investigate.');
     }
@@ -64,4 +49,3 @@ const CountriesPage = () => {
 };
 
 export default CountriesPage;
-

@@ -1,11 +1,12 @@
 import react from "react";
 import "../CSS/About.css";
+
 const About = () => {
-    return (
-      <div className="about-container">
-        <h1 className="about-us">About The Devs</h1>
-        <ul className="developer-pro">
-          <li className="developer">
+  return (
+    <div className="about-container">
+      <h1 className="about-us">About The Devs</h1>
+      <ul className="developer-pro">
+        <li className="developer">
           <h2>Anita</h2>
           <p className="linkedin-link"></p>
           <p className="linkedin-link">
@@ -96,11 +97,21 @@ const About = () => {
           >
             <img className="dev-photo"
               src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1712883521/pelau_yfhd9e.jpg"
+
               alt="Marlon!"
               width="300"
               height="300"
             />
           </a>
+          <p className="linkedin-link">
+            <a
+              href="https://www.linkedin.com/in/mrmarlon/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Connect with him on LinkedIn
+            </a>
+          </p>
         </li>
       </ul>
     </div>
