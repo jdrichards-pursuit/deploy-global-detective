@@ -1,8 +1,8 @@
-# Portfolio Project
+# Portfolio Project - `TEAM 1`
 ## PROJECT APP - FULLSTACK 
 ### (w/ Firebase)
 
-**Global Agent** by Anita Owen, Armando Pires, Brenda Soto, Luis Tejada and Marlon Regis.. 🧑🏾‍💻 We also had some incredible `global mentors` from both design and technical teams @ BLACKSTONE that helped guide us along the way and deserve mention: Aditi Bhatia & Rachel Tamarkin (Design) x Sophia Setsu & Punit Naik (Technical). You ALL are very much appreciated!
+**Global Agent** by `Anita Owen`, `Armando Pires`, `Brenda Soto`, `Luis Tejada` and `Marlon Regis`!🧑🏾‍💻 We also had some incredible `global mentors` from both design and technical teams @ BLACKSTONE that helped guide us along the way and deserve mention: `Aditi Bhatia` & `Rachel Tamarkin` (Design) x `Sophia Setsu` & `Punit Naik` (Technical). You ALL are very much appreciated!
 
 <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Gradient fade/v1720196363/GlobalAgent-Home_yo5qv7.jpg" alt="Global Agent!" width="800" height="400">
 
@@ -87,20 +87,26 @@ Many routes were used for the following files below:
 <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1720199090/GlobalAgent-top_secret_nox0i7.png" alt="top secret!" width="600" height="400">
 
 
-## USER STORIES
+## User Stories
 
 1. The app should be free to download, informative and be available on any mobile device.
 
-2. As a user, ?
+2. As a user, I want to create a personalized detective avatar and profile so that I can immerse myself in the role of a news detective.
 
-3. As a user, ?
+3. As a user, I want to receive daily or weekly news cases to solve, complete with clues and tasks, so that I can stay engaged and informed about current events.
 
-4. As a repeat user, ?
+4. As a repeat user, I want to earn badges and rewards for solving cases and completing educational challenges, so that I feel motivated to continue using the app and learning.
 
-5. As an avid user, ?
+5. As an avid user, I want to be able to participate in leaderboards and compete with friends or other users, so that I can see how my investigative skills stack up and stay motivated to improve.
+
+6. As a user, I want to collaborate with my peers on complex cases and share insights through in-app messaging or forums, so that I can learn from others and improve my teamwork skills.
+
+7. As a repeat user, I want to track my progress and review the cases I have solved, so that I can reflect on my learning journey and see my improvement over time.
+
+8. As an avid user, I want to receive feedback and tips from virtual mentors or experts within the app, so that I can enhance my investigative skills and become more knowledgeable about world news.
 
 
-## User Personas:
+## USER PERSONAS:
 
 <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1720465536/GlobalAgent-Sarah_wdlnqn.webp" alt="Sarah!" width="300" height="300">
 
