@@ -1,6 +1,8 @@
 import About from "../Components/About";
-import "./About.css";
+// import "./About.css";
 
 export default function AboutPage() {
-  return <About />;
+  return (
+      <About />
+  );
 }

@@ -7,6 +7,7 @@ import { auth } from "./helpers/firebase";
 import Login from "./Components/Login";
 import SignUpView from "./Pages/SignUpView.jsx";
 // import Profile from './Components/Profile'
+
 import Test from "./Components/Test";
 import HomePage from "./Pages/HomePage";
 import CountriesPage from "./Pages/CountriesPage.jsx";
