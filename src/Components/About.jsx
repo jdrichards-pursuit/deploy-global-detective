@@ -97,7 +97,6 @@ const About = () => {
           >
             <img className="dev-photo"
               src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1712883521/pelau_yfhd9e.jpg"
-
               alt="Marlon!"
               width="300"
               height="300"
@@ -105,11 +104,7 @@ const About = () => {
           </a>
           <p className="linkedin-link">
             <a
-              href="https://www.linkedin.com/in/mrmarlon/"
-              target="_blank"
-              rel="noopener noreferrer"
             >
-              Connect with him on LinkedIn
             </a>
           </p>
         </li>
