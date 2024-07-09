@@ -2,11 +2,13 @@
 ## PROJECT APP - FULLSTACK 
 ### (w/ Firebase)
 
-**Global Agent** by `Anita Owen`, `Armando Pires`, `Brenda Soto`, `Luis Tejada` and `Marlon Regis`!🧑🏾‍💻 We also had some incredible `global mentors` from both design and technical teams @ BLACKSTONE that helped guide us along the way and deserve mention: `Aditi Bhatia` & `Rachel Tamarkin` (Design) x `Sophia Setsu` & `Punit Naik` (Technical). You ALL are very much appreciated!
+**Global Agent** by `Anita Owen`, `Armando Pires`, `Brenda Soto`, `Luis Tejada` and `Marlon Regis`!🧑🏾‍💻 
+
+We also had some incredible `global mentors` from both design and technical teams @ BLACKSTONE that helped guide us along the way and deserve mention: `Aditi Bhatia` & `Rachel Tamarkin` (Design) x `Sophia Setsu` & `Punit Naik` (Technical). You ALL are very much appreciated!
 
 <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Gradient fade/v1720196363/GlobalAgent-Home_yo5qv7.jpg" alt="Global Agent!" width="800" height="400">
 
-**Global Agent** is a form of `edutainment` where players -- middle to high school aged, join an elite agency of news detectives, solving cases by investigating current events and world news. Gamified Education at its best.
+**Global Agent** is a form of `edutainment` where players -- middle to high school aged, join an elite agency of news detectives, solving cases by investigating current events and world news. Gamified-Education at its best.
 
 ## Game Structure
 1. **Agency Headquarters**(Dashboard): The main interface where players manage their detective profile, view cases, and track progress.
@@ -81,7 +83,7 @@ Our efforts to build this app utilized the following below **Project Tools & Ski
 ## ROUTES
 Many routes were used for the following files below:
 
--
+-?
 
 
 <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1720199090/GlobalAgent-top_secret_nox0i7.png" alt="top secret!" width="600" height="400">
@@ -149,7 +151,7 @@ Many routes were used for the following files below:
 <p align="center">
   <img src="https://res.cloudinary.com/dgifdj6nx/image/upload/t_Profile/v1712883521/pelau_yfhd9e.png" alt="Marlon!" width="300" height="300">
 
-Some of us just want to code!
+Devs just wanna have fund$!
 
 
 ### Visual Examples
@@ -181,14 +183,16 @@ The following are examples of the `Global Agent` app being built at different st
 # DEPLOYMENT (& SLIDE) LINKS
 
 ### Frontend Deployment: https://github.com/BSoto85/global-agent-frontend
-**my netlify.com link**: ?
+**netlify.com link**: ?
 
 ### Backend Deployment: https://github.com/BSoto85/global-agent-backend
-**my render.com link**: ?
+**render.com link**: ?
 
-**ERD**: https://dbdiagram.io/d/GLOBAL-AGENT-667b0cd79939893dae3ecffd
+**ERD**: <button><a href="https://dbdiagram.io/d/GLOBAL-AGENT-667b0cd79939893dae3ecffd">PRESS!</a></button>
 
-**Wireframe** & **Workflow**: https://www.figma.com/board/uXvEwPA6D7COhDQfPEOi4g/Game-Wireframes?node-id=0-1&t=smUWPUZvSoTq0Hw9-0
+
+**Wireframe** & **Workflow**: <button><a href="https://www.figma.com/board/uXvEwPA6D7COhDQfPEOi4g/Game-Wireframes?node-id=0-1&t=smUWPUZvSoTq0Hw9-0">CLICK!</a></button>
+ 
 
 **SLIDE**: <button><a href="?">PLAY!</a></button>
 
