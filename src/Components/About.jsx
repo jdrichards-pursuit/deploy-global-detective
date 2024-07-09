@@ -96,7 +96,7 @@ const About = () => {
             target="_blank"
           >
             <img className="dev-photo"
-              src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1712883521/pelau_yfhd9e.jpg"
+              src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1720539158/GlobalAgent-MR_ljphpa.jpg"
               alt="Marlon!"
               width="300"
               height="300"
