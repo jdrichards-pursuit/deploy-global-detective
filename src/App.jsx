@@ -1,13 +1,15 @@
+
 import { useEffect, useState } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import { getUserData } from './helpers/getUserData.js'
 
-import { auth } from './helpers/firebase'
+import { auth } from "./helpers/firebase";
 
-import Login from './Components/Login'
-import SignUpView from './Pages/SignUpView.jsx'
+import Login from "./Components/Login";
+import SignUpView from "./Pages/SignUpView.jsx";
 // import Profile from './Components/Profile'
+
 import Test from './Components/Test'
 import HomePage from './Pages/HomePage'
 import CountriesPage from './Pages/CountriesPage.jsx'
@@ -22,24 +24,25 @@ import 'react-toastify/dist/ReactToastify.css'
 import './App.css'
 import ProfilePage from './Pages/ProfilePage.jsx'
 
+
 function App() {
-  const [user, setUser] = useState()
+  const [user, setUser] = useState();
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
-      setUser(user)
-    })
-  })
+      setUser(user);
+    });
+  });
   // PROP FOR COUNTRY FETCH
   const [countries, setCountries] = useState([]);
 
   useEffect(() => {
     const fetchCountries = async () => {
       try {
-        const response = await fetch('http://localhost:3003/api/countries');
+        const response = await fetch("http://localhost:3003/api/countries");
         const data = await response.json();
         setCountries(data);
       } catch (error) {
-        console.error('Error fetching countries:', error);
+        console.error("Error fetching countries:", error);
       }
     };
 
@@ -50,10 +53,10 @@ function App() {
     <div>
       <Routes
         style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
           marginTop: 100,
         }}
       >
@@ -61,11 +64,10 @@ function App() {
           path="/"
           element={user ? <Navigate to="/profile" /> : <Login />}
         /> */}
-        <Route path="/" element={<HomePage />}/>
+        <Route path="/" element={<HomePage />} />
         <Route path="/test" element={user ? <Test /> : <Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<SignUpView />} />
-
         <Route path="/profile" element={<ProfilePage />} />
         {/* <Route path="/help" element={<HelpPage />} />
         <Route path="/about" element={<AboutPage />} /> */}
@@ -78,10 +80,11 @@ function App() {
         <Route path="/countries/:countryId/case_files/:caseFileId/questions" element={<QuestionsPage />} />
         <Route path="/countries/:countryId/case_files/:caseFileId/questions/results/:score/:totalQuestions" element={<ResultsPage />} />
         {/* <Route path="*" element={<FourOFourPage />} /> */}
+
       </Routes>
       <ToastContainer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
