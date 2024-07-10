@@ -1,9 +1,12 @@
 import React from 'react'
+import Navbar from '../Components/NavBar'
 
 
 const ProfilePage = () => {
   return (
-    <div>ProfilePage</div>
+    <div>ProfilePage
+      <Navbar/>
+    </div>
   )
 }
 

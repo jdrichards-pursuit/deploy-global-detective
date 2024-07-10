@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './NavBar';
+import { Link } from 'react-router-dom';
 import '../App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPortrait } from '@fortawesome/free-solid-svg-icons';
@@ -10,9 +11,11 @@ function Home() {
     <div className="App">
       <Navbar /> 
       <main className="main-content">
+        <Link to = "/login">
         <div className="profile-icon-container">
           <FontAwesomeIcon icon={faPortrait} />
         </div>
+        </Link>
         <section id="home" className="section">
           <div className="image-container">
             <img src={detectiveImage} alt="Detective looking through case board" className="detective-image" />
@@ -20,9 +23,11 @@ function Home() {
           <div className="border-container">
             <p>Welcome to Global Agent, where current events become your next big case! Join our elite team of young investigators to uncover the truth behind today's headlines! Are you ready to earn detective badges and rise through the ranks from Rookie to Master Sleuth & be a top-notch detective?</p>
           </div>
+          <Link to = "/login">
           <div className="login-container">
             <div className="login-button">YOUR MISSION AWAITS!</div>
           </div>
+          </Link>
         </section>
       </main>
     </div>
