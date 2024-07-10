@@ -28,7 +28,7 @@ const CaseFilesPage = () => {
         }
 
         // Fetch case files for the specific country
-        const caseFilesResponse = await fetch(`http://localhost:3003/api/countries/${countryId}/case_files`);
+        const caseFilesResponse = await fetch(`http://localhost:3003/api/case_files/${countryId}`);
         if (!caseFilesResponse.ok) {
           throw new Error('Failed to fetch case files');
         }
