@@ -2,6 +2,9 @@
 ## PROJECT APP - FULLSTACK 
 ### (w/ Firebase)
 
+
+<img src="https://res.cloudinary.com/dgifdj6nx/image/upload/v1720808364/GlobalAgent-logo-background_lylute.png" alt="Global Agent Logo!" width="300" height="300">
+
 **Global Agent** by `Anita Owen`, `Armando Pires`, `Brenda Soto`, `Luis Tejada` and `Marlon Regis`!🧑🏾‍💻 
 
 We also had some incredible `global mentors` from both design and technical teams @ BLACKSTONE that helped guide us along the way and deserve mention: `Aditi Bhatia` & `Rachel Tamarkin` (Design) x `Sophia Setsu` & `Punit Naik` (Technical). You ALL are very much appreciated!
