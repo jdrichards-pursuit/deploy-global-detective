@@ -1,12 +1,17 @@
 import React from 'react';
 import Navbar from './NavBar';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import '../App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPortrait } from '@fortawesome/free-solid-svg-icons';
 import detectiveImage from '../assets/vecteezy_detective-looking-through-case-board_22129502.svg';
 
 function Home() {
+  const navigate = useNavigate();
+
+  const handleLoginClick = () => {
+    navigate('/login');
+};
   return (
     <div className="App">
       <Navbar /> 
@@ -23,11 +28,9 @@ function Home() {
           <div className="border-container">
             <p>Welcome to Global Agent, where current events become your next big case! Join our elite team of young investigators to uncover the truth behind today's headlines! Are you ready to earn detective badges and rise through the ranks from Rookie to Master Sleuth & be a top-notch detective?</p>
           </div>
-          <Link to = "/login">
-          <div className="login-container">
+          <div className="login-container" onClick={handleLoginClick}>
             <div className="login-button">YOUR MISSION AWAITS!</div>
           </div>
-          </Link>
         </section>
       </main>
     </div>

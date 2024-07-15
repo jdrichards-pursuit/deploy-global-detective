@@ -1,8 +1,14 @@
+@import url('https://fonts.cdnfonts.com/css/film-noir-adventure');
+
 body, html {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Film Noir Adventure', Arial, sans-serif;
   background-color: #c0d9d9;
+}
+
+h1, h2, p, .login-button {
+  font-family: 'Film Noir Adventure', Arial, sans-serif;
 }
 
 .navbar {
@@ -15,6 +21,9 @@ body, html {
   width: 100%;
   height: 70px;
   bottom: 0;
+  box-shadow: 6px 6px 6px rgba(130, 74, 74, 0.1); 
+  z-index: 10; 
+  border-radius: 30px 30px 0 0; 
 }
 
 .nav-links {
@@ -22,7 +31,6 @@ body, html {
   display: flex;
   margin: 0;
   padding: 0;
-
 }
 
 .nav-links li {
@@ -35,7 +43,7 @@ body, html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: color 0.3s;
+  transition: color 0.3s, transform 0.3s; 
   width: 65px;
 }
 
@@ -45,7 +53,13 @@ body, html {
 
 .nav-links a:hover {
   color: #FFC121;
+  transform: translateY(-5px); 
 }
+
+.nav-links a.active {
+  color: #FFC121; 
+}
+
 
 main {
   padding: 2rem;
@@ -55,14 +69,17 @@ main {
 
 section {
   margin-bottom: 2rem;
+  /* box-shadow: 8px 8px 8px 8px rgba(1, 1, 22, 0.1); Elevation */
+  border-radius: 60px;
 }
 
 h1, h2 {
   color: white;
 }
 .border-container {
+  border: 2px solid #ffc107;
   border-color: #253759; 
-  border-style: solid; 
+  /* border-style: solid;  */
   border-width: 2px; 
   background-color: #253759; 
   height: 210px; 
@@ -73,43 +90,57 @@ h1, h2 {
 .border-container p {
   color: white;
   text-align: center;
-  font-size: 18px;
+  font-size: 13.9px;
+  margin-top: -5px;
+  box-shadow: 18px 18px 18px 18px rgba(1, 1, 22, 0.1);
+  padding: 5px 5px;
 }
 
 .image-container {
   text-align: center;
   margin-bottom: 5px;
   margin-top: 45px;
+  
 }
 
 .detective-image {
-  max-width: 100%; 
-  height: auto; 
-  border-radius: 5px; 
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  margin-top: -15px;
+  box-shadow: 28px 28px 28px 28px rgba(1, 1, 22, 0.1);
 }
 
+
 .login-container {
-  text-align: center;
-  margin-top: 15px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+  text-decoration: none;
+  
 }
 
 .login-button {
   padding: 10px 20px;
   font-size: 1rem;
   background-color: #253759;
-  color: #FFC121;
+  color: #ffc121;
   border: none;
   border-radius: 5px;
   width: 250px;
   margin: auto;
-  
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 4px 6px 6px rgba(0, 0, 0, 0.1); /* Elevation */
+  transition: background-color 0.3s, transform 0.3s;
+  background-color: #253759;
+  box-shadow: 0 3px 0 #000000;
+  margin-top: 20px;
 }
 
-.login-button:hover {
-  color: #FFC121;
+.login-button:active {
+  box-shadow: none;
+  transform: translateY(3px);
 }
+
 .profile-icon-container {
   position: fixed;
   top: 20px;
@@ -117,6 +148,7 @@ h1, h2 {
   cursor: pointer;
   color: #253759;
   font-size: 1.5rem;
+  box-shadow: 8px 8px 8px 8px rgba(1, 1, 22, 0.1);
 }
 .profile-icon-container a {
   color: inherit;

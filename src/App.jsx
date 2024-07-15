@@ -19,6 +19,7 @@ import CaseDetailsPage from './Pages/CaseDetailsPage.jsx'
 import CasePhotosPage from './Pages/CasePhotosPage.jsx'
 import QuestionsPage from './Pages/QuestionsPage.jsx'
 import ResultsPage from './Pages/ResultPage.jsx'
+import AboutPage from './Pages/AboutPage.jsx';
 
 import 'react-toastify/dist/ReactToastify.css'
 import './App.css'
@@ -26,12 +27,15 @@ import ProfilePage from './Pages/ProfilePage.jsx'
 
 
 function App() {
-  const [user, setUser] = useState();
+  const [user, setUser] = useState(null);
+
   useEffect(() => {
-    auth.onAuthStateChanged((user) => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
       setUser(user);
     });
-  });
+    return () => unsubscribe();
+  }, []);
+
   // PROP FOR COUNTRY FETCH
   const [countries, setCountries] = useState([]);
 
@@ -69,16 +73,16 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<SignUpView />} />
         <Route path="/profile" element={<ProfilePage />} />
-        {/* <Route path="/help" element={<HelpPage />} />
-        <Route path="/about" element={<AboutPage />} /> */}
+        <Route path="/about" element={<AboutPage />} />
         {/* <Route path="/leaderboard" element={<LeaderboardPage />} /> */}
         {/* <Route path="/achievements" element={<AchievementsPage />} /> */}
-        <Route path="/countries" element={<CountriesPage countries={countries}/>} />
-        <Route path="/countries/:countryId/casefiles" element={<CaseFilesPage countries={countries}/>} />
-        <Route exact path="/countries/:countryId/case_files/:caseFileId" element={<CaseDetailsPage />} />
-        <Route path="/countries/:countriesId/case_files/:caseFileId/photos" element={<CasePhotosPage />} />
-        <Route path="/countries/:countryId/case_files/:caseFileId/questions" element={<QuestionsPage />} />
-        <Route path="/countries/:countryId/case_files/:caseFileId/questions/results/:score/:totalQuestions" element={<ResultsPage />} />
+        <Route path="/countries" element={user ? <CountriesPage countries={countries} /> : <Navigate to="/login" />} />
+        <Route path="/countries/:countryId/casefiles" element={user ? <CaseFilesPage countries={countries} /> : <Navigate to="/login" />} />
+        <Route path="/countries/:countryId/case_files/:caseFileId" element={user ? <CaseDetailsPage /> : <Navigate to="/login" />} />
+        <Route path="/countries/:countryId/case_files/:caseFileId/photos" element={user ? <CasePhotosPage /> : <Navigate to="/login" />} />
+        <Route path="/countries/:countryId/case_files/:caseFileId/questions" element={user ? <QuestionsPage /> : <Navigate to="/login" />} />
+        <Route path="/countries/:countryId/case_files/:caseFileId/questions/results/:score/:totalQuestions" element={user ? <ResultsPage /> : <Navigate to="/login" />} />
+
         {/* <Route path="*" element={<FourOFourPage />} /> */}
 
       </Routes>
