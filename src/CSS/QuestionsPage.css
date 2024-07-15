@@ -22,6 +22,7 @@
   }
   
   .answers {
+    border-radius: 0.5rem;
     border-top: 1px solid #ddd;
     padding-top: 40px;
     color: #ddd;

@@ -4,14 +4,15 @@ import Navbar from '../Components/NavBar';
 import '../CSS/QuestionsPage.css';
 
 const QuestionsPage = () => {
-  const { countryId, caseFileId } = useParams();
-  const navigate = useNavigate();
+  const { countryId, caseFileId } = useParams(); // Get URL parameters
+  const navigate = useNavigate(); // Navigation hook
 
-  const [questions, setQuestions] = useState([]);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [score, setScore] = useState(0);
-  const [selectedAnswer, setSelectedAnswer] = useState('');
+  const [questions, setQuestions] = useState([]); // State to hold questions
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0); // State to track current question index
+  const [score, setScore] = useState(0); // State to track score
+  const [selectedAnswer, setSelectedAnswer] = useState(''); // State to hold selected answer
 
+  // Fetch questions from the API when the component mounts
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
@@ -29,21 +30,27 @@ const QuestionsPage = () => {
     fetchQuestions();
   }, [caseFileId]);
 
+  // Handle form submission
   const handleSubmit = (event) => {
     event.preventDefault();
     const currentQuestion = questions[currentQuestionIndex];
+    // Check if the selected answer is correct and update score
     if (selectedAnswer === currentQuestion.correct_answer) {
       setScore(score + 1);
     }
 
+    // Check if it is the last question
     if (currentQuestionIndex === questions.length - 1) {
+      // Navigate to the results page
       navigate(`/countries/${countryId}/case_files/${caseFileId}/questions/results/${score + 1}/${questions.length}`);
     } else {
+      // Move to the next question
       setCurrentQuestionIndex(currentQuestionIndex + 1);
       setSelectedAnswer(''); // Clear selected answer for the next question
     }
   };
 
+  // Calculate the progress of the quiz
   const calculateProgress = () => {
     return ((currentQuestionIndex + 1) / questions.length) * 100;
   };
@@ -64,42 +71,18 @@ const QuestionsPage = () => {
         <p>{currentQuestion.question}</p>
         <form onSubmit={handleSubmit}>
           <div className="answers">
-            <label>
-              <input
-                type="radio"
-                value={currentQuestion.correct_answer}
-                checked={selectedAnswer === currentQuestion.correct_answer}
-                onChange={(e) => setSelectedAnswer(e.target.value)}
-              />
-              {currentQuestion.correct_answer}
-            </label>
-            <label>
-              <input
-                type="radio"
-                value={currentQuestion.incorrect_answer1}
-                checked={selectedAnswer === currentQuestion.incorrect_answer1}
-                onChange={(e) => setSelectedAnswer(e.target.value)}
-              />
-              {currentQuestion.incorrect_answer1}
-            </label>
-            <label>
-              <input
-                type="radio"
-                value={currentQuestion.incorrect_answer2}
-                checked={selectedAnswer === currentQuestion.incorrect_answer2}
-                onChange={(e) => setSelectedAnswer(e.target.value)}
-              />
-              {currentQuestion.incorrect_answer2}
-            </label>
-            <label>
-              <input
-                type="radio"
-                value={currentQuestion.incorrect_answer3}
-                checked={selectedAnswer === currentQuestion.incorrect_answer3}
-                onChange={(e) => setSelectedAnswer(e.target.value)}
-              />
-              {currentQuestion.incorrect_answer3}
-            </label>
+            {/* Render answer options */}
+            {[currentQuestion.correct_answer, currentQuestion.incorrect_answer1, currentQuestion.incorrect_answer2, currentQuestion.incorrect_answer3].map((answer, index) => (
+              <label key={index}>
+                <input
+                  type="radio"
+                  value={answer}
+                  checked={selectedAnswer === answer}
+                  onChange={(e) => setSelectedAnswer(e.target.value)}
+                />
+                {answer}
+              </label>
+            ))}
           </div>
           <button type="submit" className='submit' disabled={!selectedAnswer}>Submit</button>
         </form>
