@@ -1,8 +1,7 @@
-
-import { useEffect, useState } from 'react'
-import { Routes, Route, Navigate } from 'react-router-dom'
-import { ToastContainer } from 'react-toastify'
-import { getUserData } from './helpers/getUserData.js'
+import { useEffect, useState } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+//import { getUserData } from './helpers/getUserData.js'
 
 import { auth } from "./helpers/firebase";
 
@@ -25,6 +24,9 @@ import 'react-toastify/dist/ReactToastify.css'
 import './App.css'
 import ProfilePage from './Pages/ProfilePage.jsx'
 
+import "react-toastify/dist/ReactToastify.css";
+import "./App.css";
+import ProfilePage from "./Pages/ProfilePage.jsx";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -39,32 +41,32 @@ function App() {
   // PROP FOR COUNTRY FETCH
   const [countries, setCountries] = useState([]);
 
-  useEffect(() => {
-    const fetchCountries = async () => {
-      try {
-        const response = await fetch("http://localhost:3003/api/countries");
-        const data = await response.json();
-        setCountries(data);
-      } catch (error) {
-        console.error("Error fetching countries:", error);
-      }
-    };
+	useEffect(() => {
+		const fetchCountries = async () => {
+			try {
+				const response = await fetch("http://localhost:3003/api/countries");
+				const data = await response.json();
+				setCountries(data);
+			} catch (error) {
+				console.error("Error fetching countries:", error);
+			}
+		};
 
-    fetchCountries();
-  }, []);
+		fetchCountries();
+	}, []);
 
-  return (
-    <div>
-      <Routes
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          marginTop: 100,
-        }}
-      >
-        {/* <Route
+	return (
+		<div>
+			<Routes
+				style={{
+					display: "flex",
+					flexDirection: "column",
+					justifyContent: "center",
+					alignItems: "center",
+					marginTop: 100,
+				}}
+			>
+				{/* <Route
           path="/"
           element={user ? <Navigate to="/profile" /> : <Login />}
         /> */}
