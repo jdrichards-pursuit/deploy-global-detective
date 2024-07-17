@@ -1,6 +1,6 @@
 .leaderboard-container {
 	text-align: center;
-	padding: 25px;
+	padding: 12px;
 	background-color: #c0d9d9;
 	display: flex;
 	flex-direction: column;
@@ -24,7 +24,6 @@
 .underlinenames {
 	text-decoration: underline;
 	color: #c0d9d9;
-	font-size: 30%;
 }
 
 table {
@@ -32,16 +31,16 @@ table {
 	border-collapse: collapse;
 }
 .xpholder {
-	color: #b78c38;
-	font-size: 20px;
+	color: #ffc121;
+	font-size: 14px;
 }
 .nameholder {
 	color: white;
-	font-size: 20px;
+	font-size: 14px;
 }
 .rankholder {
-	color: #b0babf;
-	font-size: 20px;
+	color: white;
+	font-size: 14px;
 }
 
 th,
@@ -66,21 +65,21 @@ tbody tr:nth-child(odd) {
 }
 
 .investigation-info {
-	margin-top: 20px;
-	padding: 20px;
+	margin-top: 16px;
+	padding: 14px;
 	background-color: #b0babf;
-	border-radius: 10px;
+	border-radius: 18px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 .buttonest {
-	margin-top: 16px;
-	padding: 10px 20px;
+	margin-top: 10px;
+	/* padding: 8px 16px; */
 	background-color: #253759;
 	color: white;
 	border: none;
-	border-radius: 5px;
+	border-radius: 12px;
 	cursor: pointer;
 	width: fit-content;
 	white-space: nowrap;
@@ -93,7 +92,7 @@ tbody tr:nth-child(odd) {
 @media (max-width: 768px) {
 	.leaderboard {
 		width: 100%;
-		margin: 10px 0;
+		margin: 6px;
 	}
 }
 
