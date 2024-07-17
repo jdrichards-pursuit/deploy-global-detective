@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { faHome, faTrophy, faMap, faShieldAlt } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faTrophy, faMap, faPortrait} from '@fortawesome/free-solid-svg-icons';
 import '../App.css';
 
 const Navbar = () => {
@@ -24,8 +24,8 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/achievements" activeClassName="active">
-            <FontAwesomeIcon className='fa-2x' icon={faShieldAlt} />
+          <NavLink to="/login" activeClassName="active">
+            <FontAwesomeIcon className='fa-2x' icon={faPortrait} />
           </NavLink>
         </li>
       </ul>

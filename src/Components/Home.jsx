@@ -17,9 +17,9 @@ function Home() {
       <Navbar /> 
       <main className="main-content">
         <Link to = "/login">
-        <div className="profile-icon-container">
+        {/* <div className="profile-icon-container">
           <FontAwesomeIcon icon={faPortrait} />
-        </div>
+        </div> */}
         </Link>
         <section id="home" className="section">
           <div className="image-container">

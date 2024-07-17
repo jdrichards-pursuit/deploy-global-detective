@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import "../CSS/CaseDetails.css"
 import Navbar from '../Components/NavBar';
-import '../CSS/CaseDetails.css';
 
 const CaseDetailsPage = () => {
   // Extract countryId and caseFileId from URL parameters
-  const { countryId, caseFileId } = useParams();
+  const { userUid, countryId, caseFileId } = useParams();
   // State to hold the case file data
   const [caseFile, setCaseFile] = useState(null);
   // State to handle any errors during fetch
@@ -20,7 +20,7 @@ const CaseDetailsPage = () => {
     // Function to fetch case file data from the API
     const fetchCaseFileData = async () => {
       try {
-        // Fetch case file data using the countryId
+        // Fetch case file data using the countryId and caseFileId
         const response = await fetch(`http://localhost:3003/api/case_files/${countryId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch case files');
@@ -63,6 +63,7 @@ const CaseDetailsPage = () => {
       <div className="content">
         {/* Display the case file title */}
         <h1>{caseFile.article_title}</h1>
+        {/* <h1>{caseFile.article_id}</h1> */}
         {/* Button to toggle between full case file and summary view */}
         <button onClick={toggleView} className="toggle-button">
           {showFullCase ? 'View Summary' : 'View Full Case File'}
@@ -70,13 +71,14 @@ const CaseDetailsPage = () => {
         {/* Display full case content or summary based on showFullCase state */}
         <p>{showFullCase ? caseFile.article_content : summary}</p>
         {/* Link to the photos page for the case file */}
-        <Link to={`/countries/${countryId}/case_files/${caseFileId}/photos`} className="photos-link">
+        <Link to={`/countries/${countryId}/case_files/${caseFile.article_id}/photos`} className="photos-link">
           <button className="photos-button">Photos</button>
         </Link>
         {/* Link to the questions page for the case file */}
-        <Link to={`/countries/${countryId}/case_files/${caseFileId}/questions`} className="questions-link">
+        <Link to={`/${userUid}/countries/${countryId}/case_files/${caseFile.article_id}/questions`} className="questions-link">
           <button className='questions-button'>Collect the Evidence</button>
         </Link>
+
       </div>
       {/* Render the Navbar component */}
       <Navbar />
@@ -85,7 +87,5 @@ const CaseDetailsPage = () => {
 };
 
 export default CaseDetailsPage;
-
-
 
 
