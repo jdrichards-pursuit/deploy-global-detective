@@ -65,9 +65,10 @@ function Register() {
           });
           navigate("/");
         } else {
-          toast.error("User Not Found", {
-            position: "top-center",
-          });
+          // toast.error("User Not Found", {
+          //   position: "top-center",
+          // });
+          navigate("/login")
         }
       }
     } catch (error) {

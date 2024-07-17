@@ -14,7 +14,7 @@
   
   .country-container.selected {
     background-color: #c0d9d9;
-    border-color: #007bff;
+    border-color: #253759;
   }
   
   .flag-image {
@@ -23,12 +23,12 @@
   }
 
   h1{
-    margin-bottom: 20px;
+    margin-bottom: 22px;
     color: #253759;
   }
   
-  h2 {
-    font-size: 22px;
+  .countries-list h2 {
+    font-size: 18px;
   }
   
   .countries-list {
@@ -37,17 +37,14 @@
   }
   
   .submit-button {
-    padding: 10px 10px;
-    background-color: #FFD700;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    text-align: center;
+  background-color: #b78c38;
+  box-shadow: 0 3px 0 #032564;
+  font-size: 16px;
   }
   
-  .submit-button:hover {
-    background-color: #0056b3;
+  .submit-button:active {
+    box-shadow: none;
+    transform: translateY(3px);
   }
+  
   

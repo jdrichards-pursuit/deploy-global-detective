@@ -1,32 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link } from 'react-router-dom';
-import { faHome, faTrophy, faMap, faShieldAlt } from '@fortawesome/free-solid-svg-icons';
-import '../App.css'; 
+import { NavLink, useNavigate } from 'react-router-dom';
+import { faHome, faTrophy, faMap, faPortrait} from '@fortawesome/free-solid-svg-icons';
+import '../App.css';
 
 const Navbar = () => {
   return (
     <header className="navbar">
       <ul className="nav-links">
         <li>
-          <Link to="/">
+          <NavLink exact to="/" activeClassName="active">
             <FontAwesomeIcon className='fa-2x' icon={faHome} />
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to ="/leaderboard">
+          <NavLink to="/leaderboard" activeClassName="active">
             <FontAwesomeIcon className='fa-2x' icon={faTrophy} />
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to ="/countries">
+          <NavLink to="/countries" activeClassName="active">
             <FontAwesomeIcon className='fa-2x' icon={faMap} />
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to ="/achievements">
-            <FontAwesomeIcon className='fa-2x' icon={faShieldAlt} />
-          </Link>
+          <NavLink to="/login" activeClassName="active">
+            <FontAwesomeIcon className='fa-2x' icon={faPortrait} />
+          </NavLink>
         </li>
       </ul>
     </header>

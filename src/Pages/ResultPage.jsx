@@ -1,25 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { getUserData } from '../helpers/getUserData';
 import Navbar from '../Components/NavBar';
 import "../CSS/ResultPage.css"
 
 const ResultsPage = () => {
-  const { score, totalQuestions, countryId, caseFileId } = useParams();
-  const [playerStats, setPlayerStats] = useState(null);
-  const [playerId, setPlayerID] = useState(null)
+  const { score, totalQuestions, countryId, caseFileId } = useParams(); // Extract parameters from URL
+  const [playerStats, setPlayerStats] = useState(null); // State to hold player statistics
+  const [playerId, setPlayerID] = useState(null); // State to hold player ID
 
+  // Fetch user data and set player ID
+  // useEffect(() => {
+  //   async function getUser() {
+  //     const user = await getUserData(); // Helper function to fetch user data
+  //     if (user) setPlayerID(user.id);
+  //   }
+  //   getUser();
+  // }, []);
 
-  useEffect(() => {
-    async function getUser() {
-      // this is a helper function that will check the state of the current user in firebase and fetch the user using the JWT token from localstorage and the uid
-      const user = await getUserData()
-      if (user) setPlayerID(user.id)
-    }
-    getUser()
-  }, [])
-
-
+  // Fetch player statistics based on player ID
   useEffect(() => {
     const fetchPlayerStats = async () => {
       try {
@@ -37,34 +35,32 @@ const ResultsPage = () => {
     fetchPlayerStats();
   }, [playerId]);
 
-  
+  // Calculate XP earned based on the score
   const calculateXPEarned = () => {
     return score * 25;
   };
 
-
   return (
-    
     <div className="ResultsPage">
       <h2>Case 1</h2>
       <div className='findings-border'>
-      <p>Findings: {score} / {totalQuestions}</p>
-      <p>XP Earned: {calculateXPEarned()}</p>
-      <h3>Questions Summary:</h3>
-      <div className="result-buttons">
-        <Link to={`/countries/${countryId}/case_files/${caseFileId}/questions`} className="retry-link">
-          <button className="retry-button">Retry Quiz</button>
-        </Link>
-        <Link to="/countries">
-          <button>Start New Game</button>
-        </Link>
+        <p>Findings: {score} / {totalQuestions}</p>
+        <p>XP Earned: {calculateXPEarned()}</p>
+        <h3>Questions Summary:</h3>
+        <div className="result-buttons">
+          <Link to={`/countries/${countryId}/case_files/${caseFileId}/questions`} className="retry-link">
+            <button className="retry-button">Retry Quiz</button>
+          </Link>
+          <Link to="/countries">
+            <button>Start New Game</button>
+          </Link>
         </div>
       </div>
       <div className="player-stats">
         {playerStats ? (
           <>
             <h2>Progess Report</h2>
-            <h3>Rank: Junior Detective </h3>
+            <h3>Rank: Junior Detective</h3>
             <p>XP: {playerStats.xp}</p>
             <p>Games Played: {playerStats.games_played}</p>
             <p>Questions Correct: {playerStats.questions_correct}</p>
@@ -80,4 +76,5 @@ const ResultsPage = () => {
 };
 
 export default ResultsPage;
+
 
