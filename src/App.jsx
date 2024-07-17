@@ -72,7 +72,7 @@ function App() {
         <Route path="/test" element={user ? <Test /> : <Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<SignUpView />} />
-        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/profile/:userUid" element={<ProfilePage />} />
         <Route path="/about" element={<AboutPage />} />
         {/* <Route path="/leaderboard" element={<LeaderboardPage />} /> */}
         {/* <Route path="/achievements" element={<AchievementsPage />} /> */}
@@ -80,7 +80,7 @@ function App() {
         <Route path="/countries/:countryId/casefiles" element={user ? <CaseFilesPage countries={countries} /> : <Navigate to="/login" />} />
         <Route path="/countries/:countryId/case_files/:caseFileId" element={user ? <CaseDetailsPage /> : <Navigate to="/login" />} />
         <Route path="/countries/:countryId/case_files/:caseFileId/photos" element={user ? <CasePhotosPage /> : <Navigate to="/login" />} />
-        <Route path="/countries/:countryId/case_files/:caseFileId/questions" element={user ? <QuestionsPage /> : <Navigate to="/login" />} />
+        <Route path=":userUid/countries/:countryId/case_files/:caseFileId/questions"  element={user ? <QuestionsPage /> : <Navigate to="/login" />} />
         <Route path="/countries/:countryId/case_files/:caseFileId/questions/results/:score/:totalQuestions" element={user ? <ResultsPage /> : <Navigate to="/login" />} />
 
         {/* <Route path="*" element={<FourOFourPage />} /> */}

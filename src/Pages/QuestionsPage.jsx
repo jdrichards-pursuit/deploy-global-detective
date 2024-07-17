@@ -6,7 +6,6 @@ import '../CSS/QuestionsPage.css';
 const QuestionsPage = () => {
   const { countryId, caseFileId } = useParams(); // Get URL parameters
   const navigate = useNavigate(); // Navigation hook
-
   const [questions, setQuestions] = useState([]); // State to hold questions
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0); // State to track current question index
   const [score, setScore] = useState(0); // State to track score
@@ -35,7 +34,7 @@ const QuestionsPage = () => {
     event.preventDefault();
     const currentQuestion = questions[currentQuestionIndex];
     // Check if the selected answer is correct and update score
-    if (selectedAnswer === currentQuestion.correct_answer) {
+    if (selectedAnswer === currentQuestion.y_correct_answer) {
       setScore(score + 1);
     }
 
@@ -68,11 +67,11 @@ const QuestionsPage = () => {
           <div className="progress" style={{ width: `${calculateProgress()}%` }}></div>
         </div>
         <h2>Question {currentQuestionIndex + 1}</h2>
-        <p>{currentQuestion.question}</p>
+        <p>{currentQuestion.y_question}</p>
         <form onSubmit={handleSubmit}>
           <div className="answers">
             {/* Render answer options */}
-            {[currentQuestion.correct_answer, currentQuestion.incorrect_answer1, currentQuestion.incorrect_answer2, currentQuestion.incorrect_answer3].map((answer, index) => (
+            {[currentQuestion.y_correct_answer, currentQuestion.y_incorrect_answer1, currentQuestion.y_incorrect_answer2, currentQuestion.y_incorrect_answer3].map((answer, index) => (
               <label key={index}>
                 <input
                   type="radio"
@@ -93,3 +92,4 @@ const QuestionsPage = () => {
 };
 
 export default QuestionsPage;
+
