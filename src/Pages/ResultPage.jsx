@@ -4,18 +4,9 @@ import Navbar from '../Components/NavBar';
 import "../CSS/ResultPage.css"
 
 const ResultsPage = () => {
-  const { score, totalQuestions, countryId, caseFileId } = useParams(); // Extract parameters from URL
-  const [playerStats, setPlayerStats] = useState(null); // State to hold player statistics
-  const [playerId, setPlayerID] = useState(null); // State to hold player ID
-
-  // Fetch user data and set player ID
-  // useEffect(() => {
-  //   async function getUser() {
-  //     const user = await getUserData(); // Helper function to fetch user data
-  //     if (user) setPlayerID(user.id);
-  //   }
-  //   getUser();
-  // }, []);
+  const { score, totalQuestions, countryId, caseFileId } = useParams(); 
+  const [playerStats, setPlayerStats] = useState(null); 
+  const [playerId, setPlayerID] = useState(null); 
 
   // Fetch player statistics based on player ID
   useEffect(() => {

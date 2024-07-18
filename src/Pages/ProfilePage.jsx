@@ -1,45 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { logout } from '../helpers/logout'
-import { useState, useEffect } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import Navbar from '../Components/NavBar'
 import EditProfileModal from '../Components/EditProfileModal'
-// import { getUserData } from '../helpers/getUserData'
-import { Link } from 'react-router-dom'
 import '../Pages/AboutPage'
 import '../CSS/Profile.css'
 
-
-const ProfilePage = () => {
-  const { userUid } = useParams()
+const ProfilePage = ({ user, isLoading }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [user, setUser] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const navigate = useNavigate()
+  const [updatedUser, setUpdatedUser] = useState(user);
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    const fetchProfile = async () => {
-      try {
-        const response = await fetch(`http://localhost:3003/api/profile/${userUid}`, {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem('token')}`
-          }
-        });
-        const profileData = await response.json();
-        setUser(profileData);
-        setIsLoading(false);
-      } catch (error) {
-        console.error('Failed to fetch profile:', error);
-        setIsLoading(false);
-      }
-    };
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
-    fetchProfile();
-  }, [userUid]);
+  if (!user) {
+    return <div>Failed to load profile. Please try again later.</div>;
+  }
 
   const handleEditProfile = async (updatedUser) => {
     try {
-      const response = await fetch(`http://localhost:3003/api/profile/${userId}`, {
+      const response = await fetch(`http://localhost:3003/api/profile/${user.uid}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -53,12 +35,13 @@ const ProfilePage = () => {
       }
 
       const updatedProfile = await response.json();
-      setUser(updatedProfile);
+      setUpdatedUser(updatedProfile);
       setIsModalOpen(false);
     } catch (error) {
       console.error('Failed to update profile:', error);
     }
   };
+
   const handleLogout = async () => {
     const result = await logout();
     if (result) {
@@ -68,15 +51,7 @@ const ProfilePage = () => {
     }
   };
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (!user) {
-    return <div>Failed to load profile. Please try again later.</div>;
-  }
-  
-  //XP VARIABLES
+  // XP VARIABLES
   const currentXP = 4500;
   const nextBadgeXP = 5000;
 
