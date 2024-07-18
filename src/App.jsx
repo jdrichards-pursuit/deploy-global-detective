@@ -90,6 +90,7 @@ function App() {
         <Route path="/test" element={user ? <Test /> : <Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<SignUpView />} />
+        <Route path="/leaderboard" element={<LeaderboardPage />} />
         <Route path="/profile/:userUid" element={<ProfilePage user={userProfile} isLoading={isLoading} />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/countries" element={user ? <CountriesPage countries={countries} /> : <Navigate to="/login" />} />
