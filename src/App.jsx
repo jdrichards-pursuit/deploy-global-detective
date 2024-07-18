@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
+
 import { auth } from "./helpers/firebase";
 
 import Login from "./Components/Login";
@@ -18,6 +19,7 @@ import ProfilePage from './Pages/ProfilePage.jsx'
 
 import 'react-toastify/dist/ReactToastify.css'
 import './App.css'
+
 
 function App() {
   const [user, setUser] = useState(null);
@@ -54,31 +56,36 @@ function App() {
     fetchUserProfile();
   }, [user]);
 
-  useEffect(() => {
-    const fetchCountries = async () => {
-      try {
-        const response = await fetch("http://localhost:3003/api/countries");
-        const data = await response.json();
-        setCountries(data);
-      } catch (error) {
-        console.error("Error fetching countries:", error);
-      }
-    };
+	useEffect(() => {
+		const fetchCountries = async () => {
+			try {
+				const response = await fetch("http://localhost:3003/api/countries");
+				const data = await response.json();
+				setCountries(data);
+			} catch (error) {
+				console.error("Error fetching countries:", error);
+			}
+		};
 
-    fetchCountries();
-  }, []);
+		fetchCountries();
+	}, []);
 
-  return (
-    <div>
-      <Routes
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          marginTop: 100,
-        }}
-      >
+
+	return (
+		<div>
+			<Routes
+				style={{
+					display: "flex",
+					flexDirection: "column",
+					justifyContent: "center",
+					alignItems: "center",
+					marginTop: 100,
+				}}
+			>
+				{/* <Route
+          path="/"
+          element={user ? <Navigate to="/profile" /> : <Login />}
+        /> */}
         <Route path="/" element={<HomePage />} />
         <Route path="/test" element={user ? <Test /> : <Login />} />
         <Route path="/login" element={<Login />} />
