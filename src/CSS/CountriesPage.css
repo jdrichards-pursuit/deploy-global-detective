@@ -3,12 +3,12 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    border: 1px solid #253759;
-    background-color: #466273;
+    border: 2px solid #253759;
+    background-color: #b0babf;
     cursor: pointer;
     margin-bottom: 10px;
     transition: background-color 0.3s ease;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-top: 5px;
   }
   
@@ -22,24 +22,29 @@
     margin-left: 10px;
   }
 
-  h1{
-    margin-bottom: 22px;
-    color: #253759;
+  .countries-list h1{
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 18px;
   }
   
   .countries-list h2 {
     font-size: 18px;
+    color: black;
   }
   
   .countries-list {
     display: flex;
     flex-direction: column;
+    border-radius: 5px;
   }
   
   .submit-button {
-  background-color: #b78c38;
+  background-color: #ffc121;
   box-shadow: 0 3px 0 #032564;
-  font-size: 16px;
+  font-size: 14px;
+  width: 250px;
+  margin-top: 40px;
   }
   
   .submit-button:active {
@@ -47,4 +52,12 @@
     transform: translateY(3px);
   }
   
-  
+  .countries-list {
+    background-color: #253759;
+    padding: 30px 30px;
+  }
+
+  .country-list h2.selected {
+    background-color: #466273;
+    border-color: #253759;
+  }
