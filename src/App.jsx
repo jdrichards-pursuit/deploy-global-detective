@@ -24,6 +24,7 @@ import './App.css'
 function App() {
   const [user, setUser] = useState(null);
   const [userProfile, setUserProfile] = useState(null);
+  const [userStats, setUserStats] = useState(null)
   const [isLoading, setIsLoading] = useState(true);
   const [countries, setCountries] = useState([]);
 
@@ -35,25 +36,34 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const fetchUserProfile = async () => {
+    const fetchUserProfileAndStats = async () => {
       if (user) {
         try {
-          const response = await fetch(`http://localhost:3003/api/profile/${user.uid}`, {
+          const profileResponse = await fetch(`http://localhost:3003/api/profile/${user.uid}`, {
             headers: {
               Authorization: `Bearer ${localStorage.getItem('token')}`
             }
           });
-          const profileData = await response.json();
+          const profileData = await profileResponse.json();
           setUserProfile(profileData);
+
+          const statsResponse = await fetch(`http://localhost:3003/api/stats/${profileData.id}`, {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+          });
+          const statsData = await statsResponse.json();
+          setUserStats(statsData);
+          console.log(statsData)
           setIsLoading(false);
         } catch (error) {
-          console.error('Failed to fetch profile:', error);
+          console.error('Failed to fetch profile or stats:', error);
           setIsLoading(false);
         }
       }
     };
 
-    fetchUserProfile();
+    fetchUserProfileAndStats();
   }, [user]);
 
 	useEffect(() => {
@@ -91,7 +101,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<SignUpView />} />
         <Route path="/leaderboard" element={<LeaderboardPage />} />
-        <Route path="/profile/:userUid" element={<ProfilePage user={userProfile} isLoading={isLoading} />} />
+        <Route path="/profile/:userUid" element={<ProfilePage user={userProfile} isLoading={isLoading} stats={userStats}/>} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/countries" element={user ? <CountriesPage countries={countries} /> : <Navigate to="/login" />} />
         <Route path="/countries/:countryId/casefiles" element={user ? <CaseFilesPage countries={countries} /> : <Navigate to="/login" />} />

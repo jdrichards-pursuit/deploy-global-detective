@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import "../CSS/CaseDetails.css"
+import "../CSS/CaseDetails.css";
 import Navbar from '../Components/NavBar';
+import AleartModal from '../Components/AleartModal';
 
 const CaseDetailsPage = () => {
   const { userUid, countryId, caseFileId } = useParams();
   const [caseFile, setCaseFile] = useState(null);
   const [error, setError] = useState(null);
   const [showFullCase, setShowFullCase] = useState(false);
+  const [isAleartModalOpen, setIsAleartModalOpen] = useState(false);
 
   useEffect(() => {
     const fetchCaseFileData = async () => {
@@ -37,6 +39,16 @@ const CaseDetailsPage = () => {
     setShowFullCase(!showFullCase);
   };
 
+  // Open the AleartModal
+  const handleCollectEvidence = () => {
+    setIsAleartModalOpen(true);
+  };
+
+  // Close the AleartModal
+  const handleCloseAleartModal = () => {
+    setIsAleartModalOpen(false);
+  };
+
   if (error) {
     return <div>Error: {error}</div>;
   }
@@ -44,23 +56,29 @@ const CaseDetailsPage = () => {
   if (!caseFile) {
     return <div>Loading...</div>;
   }
-  
+
   return (
     <div>
-    <div className="CaseDetailsPage">
-      <div className="content">
-        <h1>{caseFile.article_title}</h1>
-        <img src={caseFile.photo_url} alt="Case" className="case-image" />
-        <p>{showFullCase ? caseFile.article_content : caseFile.summary_young}</p>
-        <button onClick={toggleView} className="toggle-button">
-          {showFullCase ? 'View Summary' : 'View Full Case File'}
-        </button>
-        <Link to={`/countries/${countryId}/case_files/${caseFile.article_id}/questions`} className="questions-link">
-          <button className='questions-button'>Collect the Evidence</button>
-        </Link>
+      <div className="CaseDetailsPage">
+        <div className="content">
+          <h1>{caseFile.article_title}</h1>
+          <img src={caseFile.photo_url} alt="Case" className="case-image" />
+          <p>{showFullCase ? caseFile.article_content : caseFile.summary_young}</p>
+          <button onClick={toggleView} className="toggle-button">
+            {showFullCase ? 'View Summary' : 'View Full Case File'}
+          </button>
+          <button onClick={handleCollectEvidence} className='questions-button'>
+            Collect the Evidence
+          </button>
+        </div>
       </div>
-    </div>
       <Navbar />
+      <AleartModal
+        isOpen={isAleartModalOpen}
+        onClose={handleCloseAleartModal}
+        countryId={countryId}
+        caseFile={caseFile}
+      />
     </div>
   );
 };
