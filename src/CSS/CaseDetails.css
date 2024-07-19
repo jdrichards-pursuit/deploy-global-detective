@@ -1,7 +1,4 @@
-/* CaseDetails.css */
-
 .CaseDetailsPage {
-  /* text-align: center; */
   padding: 20px;
   padding-bottom: 90px;
 }
@@ -10,8 +7,7 @@
   max-width: 320px;
   margin: 0 auto;
   padding: 15px;
-  border: 2px solid #000000;
-  border-radius: 30px;
+  border-radius: 10px;
   background-color: #253759;
 }
 
