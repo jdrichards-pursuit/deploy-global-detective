@@ -1,6 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import '../CSS/HelpModal.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import "../CSS/HelpModal.css";
+import english from "../translation";
 
 const AleartModal = ({ isOpen, onClose, countryId, caseFile }) => {
   if (!isOpen) return null;
@@ -8,19 +9,25 @@ const AleartModal = ({ isOpen, onClose, countryId, caseFile }) => {
   return (
     <div className="modal-overlay">
       <div className="modal-content">
-        <h2>Read the Article?</h2>
+        <h2>{english.alertH2}</h2>
         <ul>
-          <li>Have you reviewed the details of the case?</li>
-          <li>You won't be able to go back once you start collecting evidence.</li>
+          <li>{english.alertReviewDetails}</li>
+          <li>{english.alertCantGoBAck}</li>
         </ul>
-        <Link to={`/countries/${countryId}/case_files/${caseFile.article_id}/questions`} className="questions-link">
-          <button className="questions-button">Collect the Evidence</button>
+        <Link
+          to={`/countries/${countryId}/case_files/${caseFile.article_id}/questions`}
+          className="questions-link"
+        >
+          <button className="questions-button">
+            {english.collectEvidenceButton}
+          </button>
         </Link>
-        <button onClick={onClose} className="close-button-aleart">Close</button>
+        <button onClick={onClose} className="close-button-aleart">
+          {english.alertCloseButton}
+        </button>
       </div>
     </div>
   );
 };
 
 export default AleartModal;
-
