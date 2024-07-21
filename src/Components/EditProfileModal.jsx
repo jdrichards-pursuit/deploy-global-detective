@@ -1,9 +1,15 @@
 // EditProfileModal.jsx
 import React, { useState } from "react";
 import "../CSS/EditProfile.css";
-import english from "../translation";
+// import translation from "../translation";
 
-const EditProfileModal = ({ isOpen, onClose, user, updateUser }) => {
+const EditProfileModal = ({
+  isOpen,
+  onClose,
+  user,
+  updateUser,
+  translation,
+}) => {
   const [email, setEmail] = useState(user.email);
   const [firstName, setFirstName] = useState(user.first_name);
   const [lastName, setLastName] = useState(user.last_name);
@@ -49,10 +55,10 @@ const EditProfileModal = ({ isOpen, onClose, user, updateUser }) => {
         <button className="close-button" onClick={onClose}>
           X
         </button>
-        <h2>{english.editProfileH2}</h2>
+        <h2>{translation.editProfileH2}</h2>
         <form onSubmit={handleSubmit}>
           <label>
-            {english.editProfileEmail}:
+            {translation.editProfileEmail}:
             <input
               type="email"
               value={email}
@@ -61,7 +67,7 @@ const EditProfileModal = ({ isOpen, onClose, user, updateUser }) => {
             />
           </label>
           <label>
-            {english.editProfileFirstName}:
+            {translation.editProfileFirstName}:
             <input
               type="text"
               value={firstName}
@@ -70,7 +76,7 @@ const EditProfileModal = ({ isOpen, onClose, user, updateUser }) => {
             />
           </label>
           <label>
-            {english.editProfileLastName}:
+            {translation.editProfileLastName}:
             <input
               type="text"
               value={lastName}
@@ -79,7 +85,7 @@ const EditProfileModal = ({ isOpen, onClose, user, updateUser }) => {
             />
           </label>
           <label>
-            {english.editProfileDOB}:
+            {translation.editProfileDOB}:
             <input
               type="date"
               value={dob}
@@ -88,7 +94,7 @@ const EditProfileModal = ({ isOpen, onClose, user, updateUser }) => {
             />
           </label>
           <label>
-            {english.editProfilePhotoUrL}:
+            {translation.editProfilePhotoUrL}:
             <input
               type="url"
               value={photo}
@@ -96,7 +102,7 @@ const EditProfileModal = ({ isOpen, onClose, user, updateUser }) => {
               required
             />
           </label>
-          <button type="submit">{english.editProfileSubmitButton}</button>
+          <button type="submit">{translation.editProfileSubmitButton}</button>
         </form>
       </div>
     </div>

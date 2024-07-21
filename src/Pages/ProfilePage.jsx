@@ -1,54 +1,64 @@
-import React, { useState } from 'react';
-import { logout } from '../helpers/logout';
-import { useNavigate, Link } from 'react-router-dom';
-import Navbar from '../Components/NavBar';
-import EditProfileModal from '../Components/EditProfileModal';
-import { getRank, ranks } from '../helpers/Ranks';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserPen, faCog, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
-import '../CSS/Profile.css';
+import React, { useState } from "react";
+import { logout } from "../helpers/logout";
+import { useNavigate, Link } from "react-router-dom";
+import Navbar from "../Components/NavBar";
+import EditProfileModal from "../Components/EditProfileModal";
+import { getRank, ranks } from "../helpers/Ranks";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faUserPen,
+  faCog,
+  faSignOutAlt,
+} from "@fortawesome/free-solid-svg-icons";
+import "../CSS/Profile.css";
 
-const ProfilePage = ({ user, isLoading, stats }) => {
+const ProfilePage = ({ user, isLoading, stats, translation }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [updatedUser, setUpdatedUser] = useState(user);
   const navigate = useNavigate();
 
   const handleEditProfile = async (updatedUser) => {
     try {
-      const response = await fetch(`http://localhost:3003/api/profile/${user.uid}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${localStorage.getItem('token')}`
-        },
-        body: JSON.stringify(updatedUser)
-      });
+      const response = await fetch(
+        `http://localhost:3003/api/profile/${user.uid}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+          body: JSON.stringify(updatedUser),
+        }
+      );
 
       if (!response.ok) {
-        throw new Error('Failed to update profile');
+        throw new Error("Failed to update profile");
       }
 
       const updatedProfile = await response.json();
       setUpdatedUser(updatedProfile);
       setIsModalOpen(false);
     } catch (error) {
-      console.error('Failed to update profile:', error);
+      console.error("Failed to update profile:", error);
     }
   };
 
   const handleLogout = async () => {
     const result = await logout();
     if (result) {
-      navigate('/');
+      navigate("/");
     } else {
-      console.error('Failed to log out');
+      console.error("Failed to log out");
     }
   };
 
   // Get the current rank and next rank
   const userRank = getRank(stats.xp);
-  const currentRankIndex = ranks.findIndex(rank => rank.name === userRank);
-  const nextRank = currentRankIndex + 1 < ranks.length ? ranks[currentRankIndex + 1] : ranks[currentRankIndex];
+  const currentRankIndex = ranks.findIndex((rank) => rank.name === userRank);
+  const nextRank =
+    currentRankIndex + 1 < ranks.length
+      ? ranks[currentRankIndex + 1]
+      : ranks[currentRankIndex];
   const nextBadgeXP = nextRank.minXP;
   const previousRankXP = ranks[currentRankIndex]?.minXP || 0;
 
@@ -60,49 +70,80 @@ const ProfilePage = ({ user, isLoading, stats }) => {
 
   return (
     <div className="profile-page">
-    <div className="header-actions">
-        <Link to="/about" className='header-button'>
+      <div className="header-actions">
+        <Link to="/about" className="header-button">
           <button className="header-button">About Us</button>
         </Link>
-        <button className="edit-profile-icon" onClick={() => setIsModalOpen(true)} style={{ border: 'none', background: 'none', cursor: 'pointer', marginLeft: '5px', marginTop: '-30px' }}>
+        <button
+          className="edit-profile-icon"
+          onClick={() => setIsModalOpen(true)}
+          style={{
+            border: "none",
+            background: "none",
+            cursor: "pointer",
+            marginLeft: "5px",
+            marginTop: "-30px",
+          }}
+        >
           <FontAwesomeIcon icon={faCog} />
         </button>
-        <button className="edit-profile-icon" onClick={handleLogout} style={{ border: 'none', background: 'none', cursor: 'pointer', marginLeft: '15px', marginTop: '-30px' }}>
+        <button
+          className="edit-profile-icon"
+          onClick={handleLogout}
+          style={{
+            border: "none",
+            background: "none",
+            cursor: "pointer",
+            marginLeft: "15px",
+            marginTop: "-30px",
+          }}
+        >
           <FontAwesomeIcon icon={faSignOutAlt} />
         </button>
-    </div>
+      </div>
       <div className="profile-header">
         <div className="profile-picture">
           <img src={user.photo} alt="Profile" />
         </div>
         <div className="profile-details">
-        <h2>{user.first_name} {user.last_name}  
-          <button
-          className="edit-profile-icon-2"
-          onClick={() => setIsModalOpen(true)}
-          style={{ border: 'none', background: 'none', cursor: 'pointer', marginLeft: '10px' }}
-
-        >
-          <FontAwesomeIcon icon={faUserPen} />
-        </button></h2> 
+          <h2>
+            {user.first_name} {user.last_name}
+            <button
+              className="edit-profile-icon-2"
+              onClick={() => setIsModalOpen(true)}
+              style={{
+                border: "none",
+                background: "none",
+                cursor: "pointer",
+                marginLeft: "10px",
+              }}
+            >
+              <FontAwesomeIcon icon={faUserPen} />
+            </button>
+          </h2>
           <p>{user.email}</p>
           <p>DOB: {new Date(user.dob).toLocaleDateString()}</p>
         </div>
       </div>
       <div className="profile-badges">
-        <h2>{userRank}
-        <p>XP Progress</p>
-        <div className="xp-progress-bar">
-          <div
-            className="xp-progress-fill"
-            style={{ width: `${calculateXPProgress()}%` }}
-            
+        <h2>
+          {userRank}
+          <p>XP Progress</p>
+          <div className="xp-progress-bar">
+            <div
+              className="xp-progress-fill"
+              style={{ width: `${calculateXPProgress()}%` }}
             ></div>
-        </div>
-            <p>{stats.xp} / {nextBadgeXP} XP</p>
+          </div>
+          <p>
+            {stats.xp} / {nextBadgeXP} XP
+          </p>
         </h2>
-      <br />
-        <p className='stat'>You are only {xpNeededForNextBadge} points away from earning your next badge!</p>
+        <br />
+        <p className="stat">
+          You are only {xpNeededForNextBadge} points away from earning your next
+          badge!
+        </p>
       </div>
       <div className="profile-stats">
         <div className="stat">
@@ -126,6 +167,7 @@ const ProfilePage = ({ user, isLoading, stats }) => {
         onClose={() => setIsModalOpen(false)}
         user={user}
         updateUser={handleEditProfile}
+        translation={translation}
       />
       <Navbar />
     </div>
