@@ -13,6 +13,9 @@ const english = {
   editProfileDOB: "Date of Birth",
   editProfilePhotoUrL: "Photo URL",
   editProfileSubmitButton: "Save",
+  homeMissionStatement:
+    "Welcome to Global Agent, where current events become your next big case! Join our elite team of young investigators to uncover the truth behind today's headlines! Are you ready to earn detective badges and rise through the ranks from Rookie to Master Sleuth & be a top-notch detective?",
+  homeMissionAwaitsButton: "YOUR MISSION AWAITS!",
 };
 
-module.exports = english;
+export default english;

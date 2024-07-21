@@ -1,29 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../CSS/HelpModal.css";
-import english from "../translation";
+// import translation from "../translation";
 
-const AleartModal = ({ isOpen, onClose, countryId, caseFile }) => {
+const AleartModal = ({ isOpen, onClose, countryId, caseFile, translation }) => {
   if (!isOpen) return null;
 
   return (
     <div className="modal-overlay">
       <div className="modal-content">
-        <h2>{english.alertH2}</h2>
+        <h2>{translation.alertH2}</h2>
         <ul>
-          <li>{english.alertReviewDetails}</li>
-          <li>{english.alertCantGoBAck}</li>
+          <li>{translation.alertReviewDetails}</li>
+          <li>{translation.alertCantGoBAck}</li>
         </ul>
         <Link
           to={`/countries/${countryId}/case_files/${caseFile.article_id}/questions`}
           className="questions-link"
         >
           <button className="questions-button">
-            {english.collectEvidenceButton}
+            {translation.collectEvidenceButton}
           </button>
         </Link>
         <button onClick={onClose} className="close-button-aleart">
-          {english.alertCloseButton}
+          {translation.alertCloseButton}
         </button>
       </div>
     </div>
