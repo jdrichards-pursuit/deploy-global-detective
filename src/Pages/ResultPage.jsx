@@ -1,45 +1,95 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useLocation } from 'react-router-dom';
 import Navbar from '../Components/NavBar';
-import "../CSS/ResultPage.css"
+import "../CSS/ResultPage.css";
 
-const ResultsPage = () => {
-  const { score, totalQuestions, countryId, caseFileId } = useParams(); 
-  const [playerStats, setPlayerStats] = useState(null); 
-  const [playerId, setPlayerID] = useState(null); 
+const ResultsPage = ({ userStats }) => {
+  const { countryId, caseFileId } = useParams(); 
+  const location = useLocation(); // Access the current location object
+  const [currentStats, setCurrentStats] = useState(null); // State to store current player stats
+  const [hasUpdated, setHasUpdated] = useState(false); // State to track if stats have been updated
 
-  // Fetch player statistics based on player ID
+  // EXTRACT SCORE AND TOTALQUESTIONS
+  const score = location.state?.score || 0; // Get score from the location state, default to 0
+  const totalQuestions = location.state?.totalQuestions || 0; // Get totalQuestions from the location state, default to 0
+
   useEffect(() => {
-    const fetchPlayerStats = async () => {
-      try {
-        const response = await fetch(`http://localhost:3003/api/stats/1`);
-        if (!response.ok) {
-          throw new Error('Failed to fetch player stats');
-        }
-        const data = await response.json();
-        setPlayerStats(data);
-      } catch (error) {
-        console.error('Error fetching player stats:', error);
-      }
-    };
+    const storedStats = localStorage.getItem('currentPlayerStats'); 
+    if (storedStats) {
+      setCurrentStats(JSON.parse(storedStats)); // Set current stats if found in localStorage
+    } else {
+      setCurrentStats(userStats); // Otherwise, use the passed userStats
+      localStorage.setItem('currentPlayerStats', JSON.stringify(userStats)); // Store initial user stats in localStorage
+    }
+  }, [userStats]); 
 
-    fetchPlayerStats();
-  }, [playerId]);
-
-  // Calculate XP earned based on the score
   const calculateXPEarned = () => {
-    return score * 25;
+    return score * 25; // Calculate XP earned based on the score
   };
+
+  const updatePlayerStats = async (updatedStats) => {
+    try {
+      const response = await fetch(`http://localhost:3003/api/stats/${userStats.id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${localStorage.getItem('token')}` // Include authorization token
+        },
+        body: JSON.stringify(updatedStats) // Send updated stats in the request body
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to update player stats'); 
+      }
+
+      const data = await response.json(); 
+    } catch (error) {
+      console.error('Error updating player stats:', error); 
+    }
+  };
+
+  useEffect(() => {
+    if (currentStats && !hasUpdated && score > 0) {
+      const xpEarned = calculateXPEarned(); // Calculate XP earned
+
+      const newCurrentStats = {
+        ...currentStats,
+        xp: currentStats.xp + xpEarned, 
+        games_played: currentStats.games_played + 1, 
+        questions_correct: currentStats.questions_correct + score, 
+        questions_wrong: currentStats.questions_wrong + (totalQuestions - score), 
+      };
+      setCurrentStats(newCurrentStats); // Update state with new stats
+      localStorage.setItem('currentPlayerStats', JSON.stringify(newCurrentStats)); // Store new stats in localStorage
+
+      const smallIncrement = {
+        xp: xpEarned,
+        games_played: 1,
+        questions_correct: score,
+        questions_wrong: totalQuestions - score,
+      };
+      updatePlayerStats(smallIncrement); // Update player stats on the server
+      setHasUpdated(true); // Set hasUpdated to true
+    }
+  }, [currentStats, score, totalQuestions, hasUpdated]); 
+
+  if (!currentStats) {
+    return <p>Loading player stats...</p>; 
+  }
 
   return (
     <div className="ResultsPage">
-      <h2>Case 1</h2>
+      <h2>Case {caseFileId}</h2>
       <div className='findings-border'>
         <p>Findings: {score} / {totalQuestions}</p>
         <p>XP Earned: {calculateXPEarned()}</p>
         <h3>Questions Summary:</h3>
         <div className="result-buttons">
-          <Link to={`/countries/${countryId}/case_files/${caseFileId}/questions`} className="retry-link">
+          <Link 
+            to={`/countries/${countryId}/case_files/${caseFileId}/questions`} 
+            className="retry-link"
+            state={{ refresh: true }} // Pass refresh state to retry link
+          >
             <button className="retry-button">Retry Quiz</button>
           </Link>
           <Link to="/countries">
@@ -48,20 +98,14 @@ const ResultsPage = () => {
         </div>
       </div>
       <div className="player-stats">
-        {playerStats ? (
-          <>
-            <h2>Progess Report</h2>
-            <h3>Rank: Junior Detective</h3>
-            <p>XP: {playerStats.xp}</p>
-            <p>Games Played: {playerStats.games_played}</p>
-            <p>Questions Correct: {playerStats.questions_correct}</p>
-            <p>Questions Wrong: {playerStats.questions_wrong}</p>
-          </>
-        ) : (
-          <p>Loading player stats...</p>
-        )}
+        <h2>Progress Report</h2>
+        <h3>Rank: Junior Detective</h3>
+        <p>XP: {currentStats.xp}</p> 
+        <p>Games Played: {currentStats.games_played}</p> 
+        <p>Questions Correct: {currentStats.questions_correct}</p> 
+        <p>Questions Wrong: {currentStats.questions_wrong}</p> 
       </div>
-      <Navbar/>
+      <Navbar />
     </div>
   );
 };
