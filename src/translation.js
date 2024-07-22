@@ -15,4 +15,4 @@ const english = {
   editProfileSubmitButton: "Save",
 };
 
-module.exports = english;
+export default english;

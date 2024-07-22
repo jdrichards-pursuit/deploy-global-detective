@@ -102,8 +102,8 @@ const ProfilePage = ({ user, isLoading, stats }) => {
             <p>{stats.xp} / {nextBadgeXP} XP</p>
         </h2>
       <br />
-        <p className='stat'>You are only {xpNeededForNextBadge} points away from earning your next badge!</p>
       </div>
+        <p className='stat'>You are only {xpNeededForNextBadge} points away from earning your next badge!</p>
       <div className="profile-stats">
         <div className="stat">
           <h3>Games Played</h3>

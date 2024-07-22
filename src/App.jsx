@@ -107,8 +107,8 @@ function App() {
         <Route path="/countries/:countryId/casefiles" element={user ? <CaseFilesPage countries={countries} /> : <Navigate to="/login" />} />
         <Route path="/countries/:countryId/case_files/:caseFileId" element={user ? <CaseDetailsPage /> : <Navigate to="/login" />} />
         <Route path="/countries/:countryId/case_files/:caseFileId/questions"  element={user ? <QuestionsPage user={userProfile} /> : <Navigate to="/login" />} />
-        <Route path="/countries/:countryId/case_files/:caseFileId/questions/results/:score/:totalQuestions" element={user ? <ResultsPage /> : <Navigate to="/login" />} />
-      </Routes>
+        <Route path="/countries/:countryId/case_files/:caseFileId/questions/results" element={user ? <ResultsPage userStats={userStats} userProfile={userProfile} /> : <Navigate to="/login" />} />     
+        </Routes>
       <ToastContainer />
     </div>
   );
