@@ -46,7 +46,7 @@ const CountriesPage = ({ countries }) => {
                 className={`country-container ${selectedCountryId === country.id ? 'selected' : ''}`}
               >
                 <div>
-                  <h2>{country.name}</h2>
+                  <h2 className="country-name">{country.name}</h2>
                 </div>
                 <img src={country.flag} alt={`${country.name} flag`} className="flag-image" />
               </div>
