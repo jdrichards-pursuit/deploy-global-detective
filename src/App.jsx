@@ -27,14 +27,6 @@ function App() {
   const [userStats, setUserStats] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [countries, setCountries] = useState([]);
-  const [currentLanguage, setCurrentLanguage] = useState(
-    i18n.getCurrentLanguage()
-  );
-
-  const changeLanguage = (language) => {
-    i18n.changeLanguage(language);
-    setCurrentLanguage(i18n.getCurrentLanguage());
-  };
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -109,23 +101,11 @@ function App() {
           path="/"
           element={user ? <Navigate to="/profile" /> : <Login />}
         /> */}
-        <Route path="/" element={<HomePage translation={currentLanguage} />} />
-        <Route
-          path="/test"
-          element={user ? <Test /> : <Login translation={currentLanguage} />}
-        />
-        <Route
-          path="/login"
-          element={<Login translation={currentLanguage} />}
-        />
-        <Route
-          path="/register"
-          element={<SignUpView translation={currentLanguage} />}
-        />
-        <Route
-          path="/leaderboard"
-          element={<LeaderboardPage translation={currentLanguage} />}
-        />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/test" element={user ? <Test /> : <Login />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<SignUpView />} />
+        <Route path="/leaderboard" element={<LeaderboardPage />} />
         <Route
           path="/profile/:userUid"
           element={
@@ -133,22 +113,15 @@ function App() {
               user={userProfile}
               isLoading={isLoading}
               stats={userStats}
-              translation={currentLanguage}
             />
           }
         />
-        <Route
-          path="/about"
-          element={<AboutPage translation={currentLanguage} />}
-        />
+        <Route path="/about" element={<AboutPage />} />
         <Route
           path="/countries"
           element={
             user ? (
-              <CountriesPage
-                countries={countries}
-                translation={currentLanguage}
-              />
+              <CountriesPage countries={countries} />
             ) : (
               <Navigate to="/login" />
             )
@@ -158,10 +131,7 @@ function App() {
           path="/countries/:countryId/casefiles"
           element={
             user ? (
-              <CaseFilesPage
-                countries={countries}
-                translation={currentLanguage}
-              />
+              <CaseFilesPage countries={countries} />
             ) : (
               <Navigate to="/login" />
             )
@@ -169,19 +139,13 @@ function App() {
         />
         <Route
           path="/countries/:countryId/case_files/:caseFileId"
-          element={
-            user ? (
-              <CaseDetailsPage translation={currentLanguage} />
-            ) : (
-              <Navigate to="/login" />
-            )
-          }
+          element={user ? <CaseDetailsPage /> : <Navigate to="/login" />}
         />
         <Route
           path="/countries/:countryId/case_files/:caseFileId/questions"
           element={
             user ? (
-              <QuestionsPage user={userProfile} translation={currentLanguage} />
+              <QuestionsPage user={userProfile} />
             ) : (
               <Navigate to="/login" />
             )
@@ -189,13 +153,7 @@ function App() {
         />
         <Route
           path="/countries/:countryId/case_files/:caseFileId/questions/results/:score/:totalQuestions"
-          element={
-            user ? (
-              <ResultsPage translation={currentLanguage} />
-            ) : (
-              <Navigate to="/login" />
-            )
-          }
+          element={user ? <ResultsPage /> : <Navigate to="/login" />}
         />
       </Routes>
       <ToastContainer />

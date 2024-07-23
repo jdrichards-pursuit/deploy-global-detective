@@ -1,10 +1,10 @@
 import React from "react";
 import Home from "../Components/Home";
 
-const HomePage = ({ translation }) => {
+const HomePage = () => {
   return (
     <div>
-      <Home translation={translation} />
+      <Home />
     </div>
   );
 };

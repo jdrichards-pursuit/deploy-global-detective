@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPortrait } from "@fortawesome/free-solid-svg-icons";
 import detectiveImage from "../assets/vecteezy_detective-looking-through-case-board_22129502.svg";
 
-function Home({ translation }) {
+function Home() {
   const navigate = useNavigate();
 
   const handleLoginClick = () => {
@@ -30,12 +30,16 @@ function Home({ translation }) {
             />
           </div>
           <div className="border-container">
-            <p>{translation.homeMissionStatement}</p>
+            <p>
+              Welcome to Global Agent, where current events become your next big
+              case! Join our elite team of young investigators to uncover the
+              truth behind today's headlines! Are you ready to earn detective
+              badges and rise through the ranks from Rookie to Master Sleuth &
+              be a top-notch detective?
+            </p>
           </div>
           <div className="login-container" onClick={handleLoginClick}>
-            <div className="login-button">
-              {translation.homeMissionAwaitsButton}
-            </div>
+            <div className="login-button">YOUR MISSION AWAITS!</div>
           </div>
         </section>
       </main>

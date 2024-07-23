@@ -1,10 +1,10 @@
 import "../CSS/About.css";
 // import translation from "../translations/translation.js";
 
-const About = ({ translation }) => {
+const About = () => {
   return (
     <div className="about-container">
-      <h1 className="about-us">{translation.aboutUsH1}</h1>
+      <h1 className="about-us">About The Devs</h1>
       <ul className="developer-pro">
         <li className="developer">
           <h2>Anita</h2>
@@ -15,7 +15,7 @@ const About = ({ translation }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {translation.aboutUsConnectOnLink} LinkedIn
+              Connect on LinkedIn
             </a>
           </p>
           <a
@@ -39,7 +39,7 @@ const About = ({ translation }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {translation.aboutUsConnectOnLink} LinkedIn
+              Connect on LinkedIn
             </a>
           </p>
           <a
@@ -63,7 +63,7 @@ const About = ({ translation }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {translation.aboutUsConnectOnLink} LinkedIn
+              Connect on LinkedIn
             </a>
           </p>
           <a
@@ -87,7 +87,7 @@ const About = ({ translation }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {translation.aboutUsConnectOnLink} LinkedIn
+              Connect on LinkedIn
             </a>
           </p>
           <a
@@ -111,7 +111,7 @@ const About = ({ translation }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {translation.aboutUsConnectOnLink} LinkedIn
+              Connect on LinkedIn
             </a>
           </p>
           <a

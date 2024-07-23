@@ -3,13 +3,7 @@ import React, { useState } from "react";
 import "../CSS/EditProfile.css";
 // import translation from "../translation";
 
-const EditProfileModal = ({
-  isOpen,
-  onClose,
-  user,
-  updateUser,
-  translation,
-}) => {
+const EditProfileModal = ({ isOpen, onClose, user, updateUser }) => {
   const [email, setEmail] = useState(user.email);
   const [firstName, setFirstName] = useState(user.first_name);
   const [lastName, setLastName] = useState(user.last_name);
@@ -55,10 +49,10 @@ const EditProfileModal = ({
         <button className="close-button" onClick={onClose}>
           X
         </button>
-        <h2>{translation.editProfileH2}</h2>
+        <h2>Edit Profile</h2>
         <form onSubmit={handleSubmit}>
           <label>
-            {translation.editProfileEmail}:
+            Email:
             <input
               type="email"
               value={email}
@@ -67,7 +61,7 @@ const EditProfileModal = ({
             />
           </label>
           <label>
-            {translation.editProfileFirstName}:
+            First Name:
             <input
               type="text"
               value={firstName}
@@ -76,7 +70,7 @@ const EditProfileModal = ({
             />
           </label>
           <label>
-            {translation.editProfileLastName}:
+            Last Name:
             <input
               type="text"
               value={lastName}
@@ -85,7 +79,7 @@ const EditProfileModal = ({
             />
           </label>
           <label>
-            {translation.editProfileDOB}:
+            Date of Birth:
             <input
               type="date"
               value={dob}
@@ -94,7 +88,7 @@ const EditProfileModal = ({
             />
           </label>
           <label>
-            {translation.editProfilePhotoUrL}:
+            Photo URL:
             <input
               type="url"
               value={photo}
@@ -102,7 +96,7 @@ const EditProfileModal = ({
               required
             />
           </label>
-          <button type="submit">{translation.editProfileSubmitButton}</button>
+          <button type="submit">Save</button>
         </form>
       </div>
     </div>
