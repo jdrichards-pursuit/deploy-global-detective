@@ -26,7 +26,7 @@ async function handleGoogleSignIn() {
     }
 
     // return key/value to use for the navigate in the googleLogin function below
-    return { navigateTo: '/profile' }
+    return { navigateTo: `/profile/${user.uid}}` }
   } catch (error) {
     localStorage.removeItem('token')
     throw error

@@ -1,81 +1,70 @@
 .CaseDetailsPage {
-  text-align: center;
-  min-height: 100vh; 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding: 20px;
+  padding-bottom: 90px;
 }
 
 .content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 320px;
+  margin: 0 auto;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #253759;
 }
 
-.CaseDetailsPage h1 {
-  font-size: 20px;
-  margin-bottom: 10px;
-  padding: 5px 5px;
+.content h1 {
+  font-size: 15px;
+  color: #fff;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.content p {
+  font-size: 14px;
+  color: #fff;
+  margin-top: -30px;
+  text-align: center;
+}
+
+.case-image {
+  width: 150%;
+  max-width: 270px;
+  height: auto;
+  margin: 30px 0;
+  border-radius: 10px;
+  margin-left: 10px;
   margin-top: 5px;
 }
 
-.CaseDetailsPage p {
-  font-size: 13px;
-  margin-bottom: -10px;
-  padding: 10px 10px;
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
-.questions-button {
-  margin-top: 10px;  
-  background-color: #ffc121;
-  box-shadow: 0 4px 0 #032564;
-  font-size: 13px;
-}
-    /* Add margin to separate the buttons */
-
-.questions-button:active {
-  box-shadow: none;
-  transform: translateY(3px);
-}
-
-.toggle-button {
-  background-color: #253759;
-  box-shadow: 0 3px 0 #032564;
+.toggle-button, .questions-button {
+  display: block;
+  width: 200px;
+  margin: 10px auto;
+  padding: 10px 20px;
   font-size: 16px;
-}
-
-.toggle-button:active {
-  box-shadow: none;
-  transform: translateY(3px);
-}
-.questions-link {
-  padding-bottom: 90px;
-  margin-top: -10px;
-}
-.photos-link {
-  margin-bottom: 10px; 
-  text-align: center;
-  padding-top: 20px;
-}
-
-.photos-button {
-  display: inline-block;
-  padding: 10px 10px;
-  font-size: 12px;
-  color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  background-color: #253759;
-  box-shadow: 0 4px 0 #000000;
-  font-size: 16px;
 }
 
-.photos-button:active {
-  box-shadow: none;
-  transform: translateY(3px);
+.toggle-button {
+  background-color: #b0babf;
+  box-shadow: 0 3px 0 #032564;
+  font-size: 14px;
+  width: 250px;
+  margin-top: 20px;
 }
+
+.questions-button {
+  background-color: #ffc121;
+  box-shadow: 0 3px 0 #020d23;
+  font-size: 14px;
+  width: 250px;
+  margin-top: 20px;
+  text-decoration: none;
+}
+.questions-link {
+  text-decoration: none;
+}
+
+
