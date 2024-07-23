@@ -11,6 +11,7 @@ import {
   faSignOutAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import "../CSS/Profile.css";
+const URL = import.meta.env.VITE_BASE_URL;
 
 const ProfilePage = ({ user, isLoading, stats }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -19,17 +20,14 @@ const ProfilePage = ({ user, isLoading, stats }) => {
 
   const handleEditProfile = async (updatedUser) => {
     try {
-      const response = await fetch(
-        `http://localhost:3003/api/profile/${user.uid}`,
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-          body: JSON.stringify(updatedUser),
-        }
-      );
+      const response = await fetch(`${URL}/api/profile/${user.uid}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+        body: JSON.stringify(updatedUser),
+      });
 
       if (!response.ok) {
         throw new Error("Failed to update profile");
@@ -128,20 +126,20 @@ const ProfilePage = ({ user, isLoading, stats }) => {
       <div className="profile-badges">
         <div className="rank-container">
           <h2>{userRank}</h2>
-            <p className="user-xp">{stats.xp} XP</p>
-            <div className="xp-progress-bar">
-              <div
-                className="xp-progress-fill"
-                style={{ width: `${calculateXPProgress()}%` }}
-              ></div>
-            
+          <p className="user-xp">{stats.xp} XP</p>
+          <div className="xp-progress-bar">
+            <div
+              className="xp-progress-fill"
+              style={{ width: `${calculateXPProgress()}%` }}
+            ></div>
+
             <p>
               {stats.xp} / {nextBadgeXP} XP
             </p>
-            </div>
+          </div>
           <p className="stat">
-            You are only {xpNeededForNextBadge} points away from earning your next
-            badge!
+            You are only {xpNeededForNextBadge} points away from earning your
+            next badge!
           </p>
         </div>
       </div>
@@ -167,7 +165,6 @@ const ProfilePage = ({ user, isLoading, stats }) => {
         onClose={() => setIsModalOpen(false)}
         user={user}
         updateUser={handleEditProfile}
-        translation={translation}
       />
       <Navbar />
     </div>
