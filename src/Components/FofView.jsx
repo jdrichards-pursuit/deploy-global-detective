@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./FofView.css";
+import "./CSS/FofView.css";
 
 const FofView = () => {
   return (
