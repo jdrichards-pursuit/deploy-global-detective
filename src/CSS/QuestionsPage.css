@@ -87,3 +87,25 @@ button:hover {
   margin-top: 70px;
   padding: 10px 10px;
 }
+
+.answer-label{
+  color: white;
+}
+@media (min-width: 917px) {
+
+  .QuestionsPage{
+    margin-top: 2%
+  }
+  .QuestionsPage button {
+    margin-left: 80%;
+    margin-top: 5%
+  }
+  .QuestionsPage label{
+    margin-bottom: 20px;
+  }
+  .QuestionsPage h2{
+    /* border: 5px solid purple; */
+    margin-bottom: 30px;
+  }
+}
+

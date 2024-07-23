@@ -188,7 +188,7 @@
 }
 
 .new-investigation {
-  font-size: 15px;
+  font-size: 11px;
   background-color: #253759;
   box-shadow: 0 3px 0 #000000;
   text-align: center;
@@ -206,9 +206,6 @@
 
 
 @media (min-width: 917px) {
-  .profile-page{
-    /* border: 5px solid red; */
-  }
   .header-actions{
     /* border: 5px solid green; */
     margin-bottom: 5%
@@ -225,14 +222,11 @@
   .new-investigation{
   font-size: 15px;
   width: 200px;
-
-
   }
   .stat p {
     font-size: 15px;
   }
   .profile-badges{
-    /* border: 5px solid yellow; */
     width: 90%;
     display:flex;
     align-items: center;
@@ -240,7 +234,6 @@
 
   }
   .rank-container{
-    /* border: 5px solid yellow; */
     padding-top: 3%;
     padding-bottom: 3%;
     
@@ -253,22 +246,14 @@
     margin: 20px;
   }
   .profile-header{
-    /* border: 5px solid purple; */
     display:flex;
     align-items: center;
     justify-content: center;
     width: 90%
   }
 
-
-  /* .edit-profile-icon-2{
-    border: 5px solid orange;
-  } */
-
-  /* {
-    display:flex;
-    align-items: center;
-    justify-content: center;
-  } */
+  .header-actions {
+    margin-top: 2%
+  }
 }
 
