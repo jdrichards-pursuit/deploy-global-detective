@@ -79,6 +79,7 @@ const QuestionsPage = ({ user }) => {
 
   return (
     <div>
+      <Navbar /> {/* Include the navigation bar */}
       <div className="QuestionsPage">
         <div className="progress-bar">
           <div className="progress" style={{ width: `${calculateProgress()}%` }}></div> {/* Display progress bar */}
@@ -100,7 +101,6 @@ const QuestionsPage = ({ user }) => {
           <button type="submit" disabled={!selectedAnswer}>Submit</button> {/* Disable submit button if no answer is selected */}
         </form>
       </div>
-      <Navbar /> {/* Include the navigation bar */}
     </div>
   );
 };

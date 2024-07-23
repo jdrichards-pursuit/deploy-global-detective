@@ -70,6 +70,7 @@ const ProfilePage = ({ user, isLoading, stats }) => {
 
   return (
     <div className="profile-page">
+      <Navbar />
       <div className="header-actions">
         <Link to="/about" className="header-button">
           <button className="header-button">About Us</button>
@@ -167,9 +168,8 @@ const ProfilePage = ({ user, isLoading, stats }) => {
         onClose={() => setIsModalOpen(false)}
         user={user}
         updateUser={handleEditProfile}
-        translation={translation}
+        // translation={translation}
       />
-      <Navbar />
     </div>
   );
 };

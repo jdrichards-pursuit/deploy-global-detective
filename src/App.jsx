@@ -20,7 +20,7 @@ import QuestionsPage from "./Pages/QuestionsPage.jsx";
 import ResultsPage from "./Pages/ResultPage.jsx";
 import AboutPage from "./Pages/AboutPage.jsx";
 import ProfilePage from "./Pages/ProfilePage.jsx";
-import i18n from "./translations/i18n.js";
+// import i18n from "./translations/i18n.js";
 
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
@@ -160,7 +160,7 @@ function App() {
           path="/countries/:countryId/case_files/:caseFileId/questions/results"
           element={
             user ? (
-              <ResultsPage translation={currentLanguage} />
+              <ResultsPage />
             ) : (
               <Navigate to="/login" />
             )
