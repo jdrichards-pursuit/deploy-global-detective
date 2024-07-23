@@ -7,8 +7,7 @@ import { auth } from "./helpers/firebase";
 import Login from "./Components/Login";
 import SignUpView from "./Pages/SignUpView.jsx";
 
-import FofPage from './Pages/FofPage.jsx';
-
+import FofPage from "./Pages/FofPage.jsx";
 
 import Test from "./Components/Test";
 import HomePage from "./Pages/HomePage";
@@ -20,10 +19,11 @@ import QuestionsPage from "./Pages/QuestionsPage.jsx";
 import ResultsPage from "./Pages/ResultPage.jsx";
 import AboutPage from "./Pages/AboutPage.jsx";
 import ProfilePage from "./Pages/ProfilePage.jsx";
-import i18n from "./translations/i18n.js";
 
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
+
+const URL = import.meta.env.VITE_BASE_URL;
 
 function App() {
   const [user, setUser] = useState(null);
@@ -44,7 +44,7 @@ function App() {
       if (user) {
         try {
           const profileResponse = await fetch(
-            `http://localhost:3003/api/profile/${user.uid}`,
+            `${URL}/api/profile/${user.uid}`,
             {
               headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -55,7 +55,7 @@ function App() {
           setUserProfile(profileData);
 
           const statsResponse = await fetch(
-            `http://localhost:3003/api/stats/${profileData.id}`,
+            `${URL}/api/stats/${profileData.id}`,
             {
               headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -79,7 +79,7 @@ function App() {
   useEffect(() => {
     const fetchCountries = async () => {
       try {
-        const response = await fetch("http://localhost:3003/api/countries");
+        const response = await fetch(`${URL}/api/countries`);
         const data = await response.json();
         setCountries(data);
       } catch (error) {
@@ -158,14 +158,9 @@ function App() {
         />
         <Route
           path="/countries/:countryId/case_files/:caseFileId/questions/results"
-          element={
-            user ? (
-              <ResultsPage translation={currentLanguage} />
-            ) : (
-              <Navigate to="/login" />
-            )
-          }
+          element={user ? <ResultsPage /> : <Navigate to="/login" />}
         />
+        <Route path="*" element={<FofPage />} />
       </Routes>
       <ToastContainer />
     </div>

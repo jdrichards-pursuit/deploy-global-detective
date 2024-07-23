@@ -1,7 +1,7 @@
 // EditProfileModal.jsx
 import React, { useState } from "react";
 import "../CSS/EditProfile.css";
-// import translation from "../translation";
+const URL = import.meta.env.VITE_BASE_URL;
 
 const EditProfileModal = ({ isOpen, onClose, user, updateUser }) => {
   const [email, setEmail] = useState(user.email);
@@ -22,7 +22,7 @@ const EditProfileModal = ({ isOpen, onClose, user, updateUser }) => {
     };
 
     try {
-      const response = await fetch("http://localhost:3003/api/profile/1", {
+      const response = await fetch(`${URL}/api/profile/1`, {
         method: "PUT", // or 'POST' depending on your backend
         headers: {
           "Content-Type": "application/json",

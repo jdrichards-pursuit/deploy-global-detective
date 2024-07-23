@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import "../CSS/CaseDetails.css";
 import Navbar from "../Components/NavBar";
 import AleartModal from "../Components/AleartModal";
+const URL = import.meta.env.VITE_BASE_URL;
 
 const CaseDetailsPage = ({ translation }) => {
   const { userUid, countryId, caseFileId } = useParams();
@@ -14,9 +15,7 @@ const CaseDetailsPage = ({ translation }) => {
   useEffect(() => {
     const fetchCaseFileData = async () => {
       try {
-        const response = await fetch(
-          `http://localhost:3003/api/case_files/${countryId}`
-        );
+        const response = await fetch(`${URL}/api/case_files/${countryId}`);
         if (!response.ok) {
           throw new Error("Failed to fetch case files");
         }
