@@ -122,10 +122,6 @@
   text-align: center;
 }
 
-.stat {
-  text-align: center;
-}
-
 .xp-progress-bar {
   background-color: #e0e0e0;
   border-radius: 10px;
@@ -153,6 +149,7 @@
 }
 
 .stat {
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -191,11 +188,12 @@
 }
 
 .new-investigation {
-  font-size: 10px;
+  font-size: 15px;
   background-color: #253759;
   box-shadow: 0 3px 0 #000000;
   text-align: center;
   margin-top: 25px;
+  width: 200px;
 }
 
 .button-container {
@@ -204,3 +202,73 @@
   align-items: center;
   gap: 10px; 
 }
+
+
+
+@media (min-width: 917px) {
+  .profile-page{
+    /* border: 5px solid red; */
+  }
+  .header-actions{
+    /* border: 5px solid green; */
+    margin-bottom: 5%
+  }
+  .profile-stats{
+    /* border: 5px solid blue; */
+    width: 90%;
+    height: 75px;
+  }
+  .stat h3 {
+    margin-top: 0%;
+    font-size: 13px;
+  }
+  .new-investigation{
+  font-size: 15px;
+  width: 200px;
+
+
+  }
+  .stat p {
+    font-size: 15px;
+  }
+  .profile-badges{
+    /* border: 5px solid yellow; */
+    width: 90%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+  .rank-container{
+    /* border: 5px solid yellow; */
+    padding-top: 3%;
+    padding-bottom: 3%;
+    
+  }
+  .rank-container h2{
+    margin-left: 0px;
+    margin-bottom: 15px;
+  }
+  .xp-progress-bar{
+    margin: 20px;
+  }
+  .profile-header{
+    /* border: 5px solid purple; */
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%
+  }
+
+
+  /* .edit-profile-icon-2{
+    border: 5px solid orange;
+  } */
+
+  /* {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+  } */
+}
+

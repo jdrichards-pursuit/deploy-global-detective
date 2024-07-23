@@ -152,8 +152,14 @@ function App() {
           }
         />
         <Route
-          path="/countries/:countryId/case_files/:caseFileId/questions/results/:score/:totalQuestions"
-          element={user ? <ResultsPage /> : <Navigate to="/login" />}
+          path="/countries/:countryId/case_files/:caseFileId/questions/results"
+          element={
+            user ? (
+              <ResultsPage translation={currentLanguage} />
+            ) : (
+              <Navigate to="/login" />
+            )
+          }
         />
       </Routes>
       <ToastContainer />

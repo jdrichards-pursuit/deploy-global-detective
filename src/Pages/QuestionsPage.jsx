@@ -83,7 +83,7 @@ const QuestionsPage = ({ user }) => {
         <div className="progress-bar">
           <div className="progress" style={{ width: `${calculateProgress()}%` }}></div> {/* Display progress bar */}
         </div>
-        <h2>{currentQuestion.question}</h2>
+        <h2>{currentQuestion.y_question || currentQuestion.o_question}</h2> 
         <form onSubmit={handleSubmit}>
           {currentQuestion.answers.map((answer, index) => (
             <label key={index} className={`answer-label ${selectedAnswer === answer ? 'selected' : ''}`}>
