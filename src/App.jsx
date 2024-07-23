@@ -20,6 +20,7 @@ import CasePhotosPage from './Pages/CasePhotosPage.jsx'
 import QuestionsPage from './Pages/QuestionsPage.jsx'
 import ResultsPage from './Pages/ResultPage.jsx'
 import AboutPage from './Pages/AboutPage.jsx';
+import FofPage from './Pages/FofPage.jsx';
 
 import 'react-toastify/dist/ReactToastify.css'
 import './App.css'
@@ -74,6 +75,7 @@ function App() {
         <Route path="/register" element={<SignUpView />} />
         <Route path="/profile/:userUid" element={<ProfilePage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="*" element={<FofPage />} />
         {/* <Route path="/leaderboard" element={<LeaderboardPage />} /> */}
         {/* <Route path="/achievements" element={<AchievementsPage />} /> */}
         <Route path="/countries" element={user ? <CountriesPage countries={countries} /> : <Navigate to="/login" />} />
