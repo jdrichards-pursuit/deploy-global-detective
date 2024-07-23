@@ -188,7 +188,7 @@ function App() {
           }
         />
         <Route
-          path="/countries/:countryId/case_files/:caseFileId/questions/results/:score/:totalQuestions"
+          path="/countries/:countryId/case_files/:caseFileId/questions/results"
           element={
             user ? (
               <ResultsPage translation={currentLanguage} />

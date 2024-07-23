@@ -126,24 +126,24 @@ const ProfilePage = ({ user, isLoading, stats, translation }) => {
         </div>
       </div>
       <div className="profile-badges">
-        <h2>
-          {userRank}
-          <p>XP Progress</p>
-          <div className="xp-progress-bar">
-            <div
-              className="xp-progress-fill"
-              style={{ width: `${calculateXPProgress()}%` }}
-            ></div>
-          </div>
-          <p>
-            {stats.xp} / {nextBadgeXP} XP
+        <div className="rank-container">
+          <h2>{userRank}</h2>
+            <p className="user-xp">{stats.xp} XP</p>
+            <div className="xp-progress-bar">
+              <div
+                className="xp-progress-fill"
+                style={{ width: `${calculateXPProgress()}%` }}
+              ></div>
+            
+            <p>
+              {stats.xp} / {nextBadgeXP} XP
+            </p>
+            </div>
+          <p className="stat">
+            You are only {xpNeededForNextBadge} points away from earning your next
+            badge!
           </p>
-        </h2>
-        <br />
-        <p className="stat">
-          You are only {xpNeededForNextBadge} points away from earning your next
-          badge!
-        </p>
+        </div>
       </div>
       <div className="profile-stats">
         <div className="stat">
