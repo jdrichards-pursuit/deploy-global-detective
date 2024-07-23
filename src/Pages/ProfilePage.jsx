@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { logout } from "../helpers/logout";
 import { useNavigate, Link } from "react-router-dom";
-import Navbar from "../Components/NavBar";
+// import Navbar from "../Components/NavBar";
 import EditProfileModal from "../Components/EditProfileModal";
 import { getRank, ranks } from "../helpers/Ranks";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -166,7 +166,7 @@ const ProfilePage = ({ user, isLoading, stats }) => {
         user={user}
         updateUser={handleEditProfile}
       />
-      <Navbar />
+      {/* <Navbar /> */}
     </div>
   );
 };

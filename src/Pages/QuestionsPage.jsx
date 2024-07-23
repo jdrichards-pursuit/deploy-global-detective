@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
-import Navbar from "../Components/NavBar";
+// import Navbar from "../Components/NavBar";
 import shuffleAnswers from "../helpers/shuffleAnswers"; // Import the shuffleAnswers function
 import calculateAge from "../helpers/calculateAge"; // Import the calculateAge function
 import "../CSS/QuestionsPage.css";
@@ -118,7 +118,7 @@ const QuestionsPage = ({ user }) => {
           {/* Disable submit button if no answer is selected */}
         </form>
       </div>
-      <Navbar /> {/* Include the navigation bar */}
+      {/* <Navbar /> Include the navigation bar */}
     </div>
   );
 };

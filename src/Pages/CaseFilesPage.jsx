@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import Navbar from "../Components/NavBar";
+// import Navbar from "../Components/NavBar";
 import "../CSS/CaseFiles.css";
 const URL = import.meta.env.VITE_BASE_URL;
 
@@ -57,14 +57,14 @@ const CaseFilesPage = ({ countries }) => {
             className="case-file-item"
           >
             <div className="case-file-content">
-              <p className="case-label">Case {caseFile.article_id}</p>
+              <p className="case-label">Case #{caseFile.article_id}</p>
               <img src={imageUrl} alt={`Image for ${caseFile.article_title}`} />
               <h2>{caseFile.article_title}</h2>
             </div>
           </Link>
         ))}
       </div>
-      <Navbar />
+      {/* <Navbar /> */}
     </div>
   );
 };
