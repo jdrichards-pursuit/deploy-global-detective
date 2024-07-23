@@ -12,7 +12,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "../CSS/Profile.css";
 
-const ProfilePage = ({ user, isLoading, stats, translation }) => {
+const ProfilePage = ({ user, isLoading, stats }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [updatedUser, setUpdatedUser] = useState(user);
   const navigate = useNavigate();
