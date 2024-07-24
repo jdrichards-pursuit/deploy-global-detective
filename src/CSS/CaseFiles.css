@@ -42,7 +42,7 @@
 }
 
 .case-file-item:hover {
-  background-color: #f0f0f0;
+  background-color: #466273;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -69,15 +69,40 @@
 .case-file-content h2 {
   font-size: 15px;
   margin: 15px;
-  color: #c0d9d9;
+  color: white;
   padding: 5px 5px;
 }
 
 .case-file-content p {
   font-size: 14px;
-  color: #c0d9d9;
-  margin: 0;
+  color: white;
+  margin-bottom: 10px;
+  margin-top: 5px;
 }
 
 @media (min-width: 917px) {
+  .case-files-list {
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 100px 60px;
+  }
+
+  .CaseFilesPage h1 {
+    font-size: 36px;
+    margin-top: 50px;
+  }
+
+  .case-file-content h2 {
+    font-size: 16px;
+    margin: 15px;
+    color: white;
+    padding: 5px 5px;
+  }
+
+  .case-file-content p {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 10px;
+    margin-top: 5px;
+  }
 }

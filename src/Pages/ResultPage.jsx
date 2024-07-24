@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams, useLocation } from "react-router-dom";
-import Navbar from "../Components/NavBar";
+// import Navbar from "../Components/NavBar";
 import "../CSS/ResultPage.css";
 const URL = import.meta.env.VITE_BASE_URL;
 
@@ -26,7 +26,7 @@ const ResultsPage = ({ userStats, user }) => {
 
   const updatePlayerStats = async (updatedStats) => {
     try {
-      const response = await fetch(`${URL}/api/stats/${userStats.id}`, {
+      const response = await fetch(`${URL}/api/stats/${user.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -105,7 +105,7 @@ const ResultsPage = ({ userStats, user }) => {
         <p>Questions Correct: {currentStats.questions_correct}</p>
         <p>Questions Wrong: {currentStats.questions_wrong}</p>
       </div>
-      <Navbar />
+      {/* <Navbar /> */}
     </div>
   );
 };

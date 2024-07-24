@@ -22,6 +22,7 @@ import ProfilePage from "./Pages/ProfilePage.jsx";
 
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
+import Header from "./Components/NavBar.jsx";
 
 const URL = import.meta.env.VITE_BASE_URL;
 
@@ -85,6 +86,7 @@ function App() {
 
   return (
     <div>
+      <Header user={user} />
       <Routes
         style={{
           display: "flex",

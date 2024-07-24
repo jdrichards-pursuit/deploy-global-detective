@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../Components/NavBar";
+// import Navbar from "../Components/NavBar";
 import "../CSS/LeaderboardPage.css";
 import { useNavigate } from "react-router-dom";
 const URL = import.meta.env.VITE_BASE_URL;
@@ -39,7 +39,7 @@ const LeaderboardPage = () => {
 
   return (
     <div className="leaderboard-container">
-      <Navbar />
+      {/* <Navbar /> */}
       <h1>LEADERBOARD</h1>
       <div className="leaderboard">
         <table>

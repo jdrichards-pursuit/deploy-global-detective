@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "./NavBar";
+// import Navbar from "./NavBar";
 import { useNavigate, Link } from "react-router-dom";
 import "../App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,7 +14,7 @@ function Home() {
   };
   return (
     <div className="App">
-      <Navbar />
+      {/* <Navbar /> */}
       <main className="main-content">
         <Link to="/login">
           {/* <div className="profile-icon-container">
