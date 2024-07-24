@@ -84,7 +84,7 @@ const QuestionsPage = ({ user }) => {
   const currentQuestion = questions[currentQuestionIndex]; // Get the current question
 
   return (
-    <div>
+    <div> 
       <div className="QuestionsPage">
         <div className="progress-bar">
           <div
