@@ -34,6 +34,7 @@ const CountriesPage = ({ countries }) => {
 
   return (
     <div className="CountriesPage">
+      <Navbar />
       <main className="main-content">
         <section>
           <div className="countries-list">

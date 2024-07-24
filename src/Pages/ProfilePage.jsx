@@ -68,6 +68,7 @@ const ProfilePage = ({ user, isLoading, stats }) => {
 
   return (
     <div className="profile-page">
+      <Navbar />
       <div className="header-actions">
         <Link to="/about" className="header-button">
           <button className="header-button">About Us</button>
@@ -166,7 +167,6 @@ const ProfilePage = ({ user, isLoading, stats }) => {
         user={user}
         updateUser={handleEditProfile}
       />
-      {/* <Navbar /> */}
     </div>
   );
 };

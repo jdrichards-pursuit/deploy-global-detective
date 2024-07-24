@@ -61,3 +61,20 @@
     background-color: #466273;
     border-color: #253759;
   }
+  
+
+
+  @media (min-width: 917px) {
+    .main-content{
+      display:flex;
+      align-items: center;
+      justify-content: center;
+    }
+    section{
+      width: 65%;
+      margin: 20px
+    }
+
+
+
+  }

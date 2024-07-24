@@ -160,7 +160,13 @@ function App() {
         />
         <Route
           path="/countries/:countryId/case_files/:caseFileId/questions/results"
-          element={user ? <ResultsPage /> : <Navigate to="/login" />}
+          element={
+            user ? (
+              <ResultsPage />
+            ) : (
+              <Navigate to="/login" />
+            )
+          }
         />
         <Route path="*" element={<FofPage />} />
       </Routes>

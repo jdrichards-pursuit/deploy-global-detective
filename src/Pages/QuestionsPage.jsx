@@ -85,6 +85,7 @@ const QuestionsPage = ({ user }) => {
 
   return (
     <div>
+      <Navbar /> {/* Include the navigation bar */}
       <div className="QuestionsPage">
         <div className="progress-bar">
           <div
@@ -118,7 +119,6 @@ const QuestionsPage = ({ user }) => {
           {/* Disable submit button if no answer is selected */}
         </form>
       </div>
-      {/* <Navbar /> Include the navigation bar */}
     </div>
   );
 };
