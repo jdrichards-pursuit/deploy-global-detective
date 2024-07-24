@@ -4,6 +4,7 @@
   text-align: center;
   padding-top: 30px;
   padding-bottom: 50px; /* Add padding at the bottom to accommodate the navbar */
+  background-color: #c0d9d9
 }
 
 .CaseFilesPage h1 {
@@ -85,6 +86,7 @@
     flex-direction: row;
     justify-content: space-between;
     margin: 100px 60px;
+    
   }
 
   .CaseFilesPage h1 {
@@ -105,4 +107,5 @@
     margin-bottom: 10px;
     margin-top: 5px;
   }
+
 }

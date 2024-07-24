@@ -1,3 +1,6 @@
+.CountriesPage{
+  background-color: #c0d9d9;
+}
 .country-container {
     display: flex;
     justify-content: space-between;
@@ -10,6 +13,7 @@
     transition: background-color 0.3s ease;
     border-radius: 10px;
     margin-top: 5px;
+
   }
   
   .country-container.selected {
