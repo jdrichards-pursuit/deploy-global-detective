@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
-import Navbar from "../Components/NavBar";
+// import Navbar from "../Components/NavBar";
 import shuffleAnswers from "../helpers/shuffleAnswers"; // Import the shuffleAnswers function
 import calculateAge from "../helpers/calculateAge"; // Import the calculateAge function
 import "../CSS/QuestionsPage.css";
