@@ -10,7 +10,7 @@ function Home() {
   const navigate = useNavigate();
 
   const handleLoginClick = () => {
-    navigate("/login");
+    navigate("/countries");
   };
   return (
     <div className="App">

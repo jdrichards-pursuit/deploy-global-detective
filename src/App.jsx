@@ -44,28 +44,21 @@ function App() {
     const fetchUserProfileAndStats = async () => {
       if (user) {
         try {
-          const profileResponse = await fetch(
-            `${URL}/api/profile/${user.uid}`,
-            {
-              headers: {
-                Authorization: `Bearer ${localStorage.getItem("token")}`,
-              },
-            }
-          );
+          const profileResponse = await fetch(`${URL}/api/profile/${user.uid}`, {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          });
           const profileData = await profileResponse.json();
           setUserProfile(profileData);
 
-          const statsResponse = await fetch(
-            `${URL}/api/stats/${profileData.id}`,
-            {
-              headers: {
-                Authorization: `Bearer ${localStorage.getItem("token")}`,
-              },
-            }
-          );
+          const statsResponse = await fetch(`${URL}/api/stats/${profileData.id}`, {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          });
           const statsData = await statsResponse.json();
           setUserStats(statsData);
-          console.log(statsData);
           setIsLoading(false);
         } catch (error) {
           console.error("Failed to fetch profile or stats:", error);
@@ -126,47 +119,24 @@ function App() {
 
         <Route
           path="/countries"
-          element={
-            user ? (
-              <CountriesPage countries={countries} />
-            ) : (
-              <Navigate to="/login" />
-            )
-          }
+          element={<CountriesPage countries={countries}/>}
         />
         <Route
           path="/countries/:countryId/casefiles"
-          element={
-            user ? (
-              <CaseFilesPage countries={countries} />
-            ) : (
-              <Navigate to="/login" />
-            )
-          }
+          element={<CaseFilesPage countries={countries}/>}
         />
+          
         <Route
           path="/countries/:countryId/case_files/:caseFileId"
-          element={user ? <CaseDetailsPage /> : <Navigate to="/login" />}
-        />
+          element={<CaseDetailsPage/>}
+          />
         <Route
           path="/countries/:countryId/case_files/:caseFileId/questions"
-          element={
-            user ? (
-              <QuestionsPage user={userProfile} />
-            ) : (
-              <Navigate to="/login" />
-            )
-          }
-        />
+          element={<QuestionsPage user={user}/>}
+          />
         <Route
           path="/countries/:countryId/case_files/:caseFileId/questions/results"
-          element={
-            user ? (
-              <ResultsPage />
-            ) : (
-              <Navigate to="/login" />
-            )
-          }
+          element={<ResultsPage user={user} userProfile={userProfile} userStats={userStats}/>} 
         />
         <Route path="*" element={<FofPage />} />
       </Routes>

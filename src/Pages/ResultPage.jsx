@@ -4,11 +4,11 @@ import { Link, useParams, useLocation } from "react-router-dom";
 import "../CSS/ResultPage.css";
 const URL = import.meta.env.VITE_BASE_URL;
 
-const ResultsPage = ({ userStats }) => {
+const ResultsPage = ({ userStats, user }) => {
   const { countryId, caseFileId } = useParams();
   const location = useLocation(); // Access the current location object
-  const [currentStats, setCurrentStats] = useState(null); // State to store current player stats
-  const [hasUpdated, setHasUpdated] = useState(false); // State to track if stats have been updated
+  const [currentStats, setCurrentStats] = useState(userStats); 
+  const [hasUpdated, setHasUpdated] = useState(false); 
 
   // EXTRACT SCORE AND TOTALQUESTIONS
   const score = location.state?.score || 0; // Get score from the location state, default to 0
@@ -16,12 +16,12 @@ const ResultsPage = ({ userStats }) => {
 
   useEffect(() => {
     if (userStats) {
-      setCurrentStats(userStats);
+      setCurrentStats(userStats); 
     }
   }, [userStats]);
 
   const calculateXPEarned = () => {
-    return score * 25;
+    return score * 25; 
   };
 
   const updatePlayerStats = async (updatedStats) => {
@@ -30,13 +30,14 @@ const ResultsPage = ({ userStats }) => {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${user.token}`, // Assuming user.token contains the auth token
+          Authorization: `Bearer ${user.accessToken}`, 
         },
         body: JSON.stringify(updatedStats),
       });
 
       if (!response.ok) {
-        throw new Error("Failed to update player stats");
+        const errorText = await response.text();
+        throw new Error(`Failed to update player stats: ${errorText}`);
       }
 
       const data = await response.json();
@@ -48,21 +49,16 @@ const ResultsPage = ({ userStats }) => {
 
   useEffect(() => {
     if (currentStats && !hasUpdated && score > 0) {
-      const xpEarned = calculateXPEarned(); // Calculate XP earned
+      const xpEarned = calculateXPEarned();
 
       const newCurrentStats = {
         ...currentStats,
         xp: currentStats.xp + xpEarned,
         games_played: currentStats.games_played + 1,
         questions_correct: currentStats.questions_correct + score,
-        questions_wrong:
-          currentStats.questions_wrong + (totalQuestions - score),
+        questions_wrong: currentStats.questions_wrong + (totalQuestions - score),
       };
-      setCurrentStats(newCurrentStats); // Update state with new stats
-      localStorage.setItem(
-        "currentPlayerStats",
-        JSON.stringify(newCurrentStats)
-      ); // Store new stats in localStorage
+      setCurrentStats(newCurrentStats);
 
       const smallIncrement = {
         xp: xpEarned,
@@ -70,8 +66,8 @@ const ResultsPage = ({ userStats }) => {
         questions_correct: score,
         questions_wrong: totalQuestions - score,
       };
-      updatePlayerStats(smallIncrement); // Update player stats on the server
-      setHasUpdated(true); // Set hasUpdated to true
+      updatePlayerStats(smallIncrement);
+      setHasUpdated(true);
     }
   }, [currentStats, score, totalQuestions, hasUpdated]);
 
@@ -115,3 +111,4 @@ const ResultsPage = ({ userStats }) => {
 };
 
 export default ResultsPage;
+
