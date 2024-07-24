@@ -85,7 +85,6 @@ const QuestionsPage = ({ user }) => {
 
   return (
     <div>
-      <Navbar /> {/* Include the navigation bar */}
       <div className="QuestionsPage">
         <div className="progress-bar">
           <div
