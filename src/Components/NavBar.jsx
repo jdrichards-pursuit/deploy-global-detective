@@ -1,18 +1,19 @@
 import React, { useEffect, useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { NavLink, useNavigate, Link } from "react-router-dom";
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
-// import {
-//   faHome,
-//   faTrophy,
-//   faMap,
-//   faPortrait,
-// } from "@fortawesome/free-solid-svg-icons";
+import globalAgent from "../assets/globalAgentTransparent.png";
+import {
+  faHome,
+  faTrophy,
+  faMap,
+  faPortrait,
+  faBars,
+} from "@fortawesome/free-solid-svg-icons";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../CSS/NavBar.css";
 
-const Header = () => {
+const Header = ({ user }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const sidebarRef = useRef();
 
@@ -33,72 +34,66 @@ const Header = () => {
     };
   }, []);
   return (
-    // <header className="navbar">
-    //   <ul className="nav-links">
-    //     <li>
-    //       <NavLink exact to="/" activeClassName="active">
-    //         <FontAwesomeIcon className="fa-2x" icon={faHome} />
-    //       </NavLink>
-    //     </li>
-    //     <li>
-    //       <NavLink to="/leaderboard" activeClassName="active">
-    //         <FontAwesomeIcon className="fa-2x" icon={faTrophy} />
-    //       </NavLink>
-    //     </li>
-    //     <li>
-    //       <NavLink to="/countries" activeClassName="active">
-    //         <FontAwesomeIcon className="fa-2x" icon={faMap} />
-    //       </NavLink>
-    //     </li>
-    //     <li>
-    //       <NavLink to="/login" activeClassName="active">
-    //         <FontAwesomeIcon className="fa-2x" icon={faPortrait} />
-    //       </NavLink>
-    //     </li>
-    //   </ul>
-    // </header>
     <>
-      <Navbar
-        bg="dark"
-        variant="dark"
-        expand="md"
-        fixed="top"
-        className="fixed-top"
-        style={{ height: "80px", display: "flex", alignItems: "center" }}
-      >
-        <Container>
-          <Navbar.Brand as={Link} to="/" className="navbar-brand">
-            Zen Life
-          </Navbar.Brand>
-          <Nav className="d-none d-md-flex align-items-center">
-            <Nav.Link as={Link} to="/" className="navbar-btn home-btn">
-              Home
-            </Nav.Link>
-            <Nav.Link as={Link} to="/about" className="navbar-btn">
-              About
-            </Nav.Link>
-            <Nav.Link as={Link} to="/favorites" className="navbar-btn">
-              Favorites
-            </Nav.Link>
-            <Nav.Link as={Link} to="/songs" className="navbar-btn">
-              Songs
-            </Nav.Link>
-          </Nav>
-          <Button
-            className="d-md-none"
+      <div className="navbar-container">
+        <Link to={"/"} className="home-link">
+          <img className="logo" src={globalAgent} alt="Global Agent Logo" />
+        </Link>
+        <section className="section1">
+          <Link to="/leaderboard">
+            <span>Leaderboard</span>
+          </Link>
+          <Link to={"/about"}>
+            <span>About Us</span>
+          </Link>
+          <div>
+            <Link to={"/login"}>Login</Link>
+          </div>
+          {/* <Link to={"/profile"}>
+              <span>Profile</span>
+            </Link> */}
+        </section>
+        <section className="hamburger">
+          <FontAwesomeIcon
+            icon={faBars}
+            size="2xl"
+            inverse
             onClick={toggleSidebar}
-            aria-label="Toggle Sidebar"
-            style={{
-              background: "transparent",
-              border: "none",
-              color: "#fff",
-              fontSize: "24px",
-            }}
-          >
-            <FontAwesomeIcon className="fa-2x" icon={faBars} />
-          </Button>
-        </Container>
-      </Navbar>
+          />
+        </section>
+      </div>
+      {/* <header className="navbar">
+        <ul className="nav-links">
+          <div className="logo-container">
+            <li>
+              <NavLink exact to="/" activeClassName="active">
+                <img
+                  className="logo"
+                  src={globalAgent}
+                  alt="Global Agent Logo"
+                />
+              </NavLink>
+            </li>
+          </div>
+          <div className="links">
+            <li>
+              <NavLink to="/leaderboard" activeClassName="active">
+                Leaderboard
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/countries" activeClassName="active">
+                Map
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/login" activeClassName="active">
+                Profile
+              </NavLink>
+            </li>
+          </div>
+        </ul>
+      </header> */}
       <div
         ref={sidebarRef}
         className={`offcanvas offcanvas-end${isSidebarOpen ? " show" : ""}`}
@@ -135,28 +130,36 @@ const Header = () => {
               className="nav-item"
               style={{ fontSize: "20px", margin: "20px 0" }}
             >
-              <Link to="/about" className="nav-link" onClick={toggleSidebar}>
-                About
-              </Link>
-            </li>
-            <li
-              className="nav-item"
-              style={{ fontSize: "20px", margin: "20px 0" }}
-            >
               <Link
-                to="/favorites"
+                to="/leaderboard"
                 className="nav-link"
                 onClick={toggleSidebar}
               >
-                Favorites
+                Leaderboard
               </Link>
             </li>
             <li
               className="nav-item"
               style={{ fontSize: "20px", margin: "20px 0" }}
             >
-              <Link to="/songs" className="nav-link" onClick={toggleSidebar}>
-                Songs
+              <Link to="/about" className="nav-link" onClick={toggleSidebar}>
+                About Us
+              </Link>
+            </li>
+            <li
+              className="nav-item"
+              style={{ fontSize: "20px", margin: "20px 0" }}
+            >
+              <Link to="/login" className="nav-link" onClick={toggleSidebar}>
+                Login
+              </Link>
+            </li>
+            <li
+              className="nav-item"
+              style={{ fontSize: "20px", margin: "20px 0" }}
+            >
+              <Link to="/profile" className="nav-link" onClick={toggleSidebar}>
+                Profile
               </Link>
             </li>
           </ul>
