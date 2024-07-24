@@ -70,10 +70,11 @@
       align-items: center;
       justify-content: center;
     }
-    section{
-      width: 65%;
+    .CountriesPage section{
+      width: 60%;
       margin: 20px
     }
+
 
 
 

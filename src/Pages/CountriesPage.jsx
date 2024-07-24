@@ -48,7 +48,7 @@ const CountriesPage = ({ countries }) => {
                 }`}
               >
                 <div>
-                  <h2>{country.name}</h2>
+                  <h2 className="country-name">{country.name}</h2>
                 </div>
                 <img
                   src={country.flag}
