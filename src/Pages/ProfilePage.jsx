@@ -9,6 +9,7 @@ import {
   faUserPen,
   faCog,
   faSignOutAlt,
+  faQuestionCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import "../CSS/Profile.css";
 const URL = import.meta.env.VITE_BASE_URL;
@@ -83,7 +84,7 @@ const ProfilePage = ({ user, isLoading, stats }) => {
             marginTop: "-30px",
           }}
         >
-          <FontAwesomeIcon icon={faCog} />
+          <FontAwesomeIcon icon={faQuestionCircle} />
         </button>
         <button
           className="edit-profile-icon"

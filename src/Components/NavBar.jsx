@@ -50,7 +50,9 @@ const Header = ({ user }) => {
             <span>About Us</span>
           </Link>
           <div>
-            <Link to={"/login"}>Login</Link>
+            <Link to={`/profile/${user.uid}`}>
+              <FontAwesomeIcon icon={faPortrait} size="2xl" />
+            </Link>
           </div>
         </section>
         <section className="hamburger">
@@ -138,7 +140,11 @@ const Header = ({ user }) => {
               className="nav-item"
               style={{ fontSize: "20px", margin: "20px 0" }}
             >
-              <Link to="/profile" className="nav-link" onClick={toggleSidebar}>
+              <Link
+                to={`/profile/${user.uid}`}
+                className="nav-link"
+                onClick={toggleSidebar}
+              >
                 Profile
               </Link>
             </li>
