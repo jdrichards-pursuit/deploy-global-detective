@@ -40,6 +40,9 @@ const Header = ({ user }) => {
           <img className="logo" src={globalAgent} alt="Global Agent Logo" />
         </Link>
         <section className="section1">
+          <Link to="/countries">
+            <span>Map</span>
+          </Link>
           <Link to="/leaderboard">
             <span>Leaderboard</span>
           </Link>
@@ -49,9 +52,6 @@ const Header = ({ user }) => {
           <div>
             <Link to={"/login"}>Login</Link>
           </div>
-          {/* <Link to={"/profile"}>
-              <span>Profile</span>
-            </Link> */}
         </section>
         <section className="hamburger">
           <FontAwesomeIcon
@@ -62,38 +62,6 @@ const Header = ({ user }) => {
           />
         </section>
       </div>
-      {/* <header className="navbar">
-        <ul className="nav-links">
-          <div className="logo-container">
-            <li>
-              <NavLink exact to="/" activeClassName="active">
-                <img
-                  className="logo"
-                  src={globalAgent}
-                  alt="Global Agent Logo"
-                />
-              </NavLink>
-            </li>
-          </div>
-          <div className="links">
-            <li>
-              <NavLink to="/leaderboard" activeClassName="active">
-                Leaderboard
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/countries" activeClassName="active">
-                Map
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/login" activeClassName="active">
-                Profile
-              </NavLink>
-            </li>
-          </div>
-        </ul>
-      </header> */}
       <div
         ref={sidebarRef}
         className={`offcanvas offcanvas-end${isSidebarOpen ? " show" : ""}`}
@@ -124,6 +92,18 @@ const Header = ({ user }) => {
             >
               <Link to="/" className="nav-link" onClick={toggleSidebar}>
                 Home
+              </Link>
+            </li>
+            <li
+              className="nav-item"
+              style={{ fontSize: "20px", margin: "20px 0" }}
+            >
+              <Link
+                to="/countries"
+                className="nav-link"
+                onClick={toggleSidebar}
+              >
+                Map
               </Link>
             </li>
             <li
