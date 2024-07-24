@@ -1,10 +1,9 @@
 const ranks = [
     { name: "Rookie Detective", minXP: 0 },
-    { name: "Intermediate Detective", minXP: 1000 },
-    { name: "Senior Detective", minXP: 2500 },
-    { name: "Master Sleuth", minXP: 5000 },
-    { name: "Grandmaster", minXP: 10000 },
-    { name: "Legendary Detective", minXP: 20000 }
+    { name: "Junior Investigator", minXP: 1000 },
+    { name: "Gumshoe", minXP: 2000 },
+    { name: "Cheif Detective", minXP: 3000 },
+    { name: "Master Sleuth", minXP: 4000 },
   ];
   
   const getRank = (xp) => {
