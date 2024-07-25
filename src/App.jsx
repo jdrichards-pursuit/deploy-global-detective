@@ -139,7 +139,7 @@ function App() {
             <CountriesPage
             // isModalOpen={isModalOpen}
             // setIsModalOpen={setIsModalOpen}
-            // countries={countries}
+            countries={countries}
             // handleHowToPlayClick={handleHowToPlayClick}
             // handleCloseModal={handleCloseModal}
             />
