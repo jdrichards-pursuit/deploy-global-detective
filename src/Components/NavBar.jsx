@@ -50,9 +50,15 @@ const Header = ({ user }) => {
             <span>About Us</span>
           </Link>
           <div>
-            <Link to={`/profile/${user.uid}`}>
-              <FontAwesomeIcon icon={faPortrait} size="2xl" />
-            </Link>
+            {user !== null ? (
+              <Link to={`/profile/${user.uid}`}>
+                <FontAwesomeIcon icon={faPortrait} size="2xl" />
+              </Link>
+            ) : (
+              <Link to={`/login`}>
+                <FontAwesomeIcon icon={faPortrait} size="2xl" />
+              </Link>
+            )}
           </div>
         </section>
         <section className="hamburger">
@@ -128,26 +134,33 @@ const Header = ({ user }) => {
                 About Us
               </Link>
             </li>
-            <li
-              className="nav-item"
-              style={{ fontSize: "20px", margin: "20px 0" }}
-            >
-              <Link to="/login" className="nav-link" onClick={toggleSidebar}>
-                Login
-              </Link>
-            </li>
-            <li
-              className="nav-item"
-              style={{ fontSize: "20px", margin: "20px 0" }}
-            >
-              <Link
-                to={`/profile/${user.uid}`}
-                className="nav-link"
-                onClick={toggleSidebar}
+            {user !== null ? (
+              <li
+                className="nav-item"
+                style={{ fontSize: "20px", margin: "20px 0" }}
               >
-                Profile
-              </Link>
-            </li>
+                <Link
+                  to={`/profile/${user.uid}`}
+                  className="nav-link"
+                  onClick={toggleSidebar}
+                >
+                  Profile
+                </Link>
+              </li>
+            ) : (
+              <li
+                className="nav-item"
+                style={{ fontSize: "20px", margin: "20px 0" }}
+              >
+                <Link
+                  to={`/login`}
+                  className="nav-link"
+                  onClick={toggleSidebar}
+                >
+                  Profile
+                </Link>
+              </li>
+            )}
           </ul>
         </div>
       </div>
