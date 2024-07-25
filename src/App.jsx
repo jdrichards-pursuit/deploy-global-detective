@@ -32,6 +32,15 @@ function App() {
   const [userStats, setUserStats] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [countries, setCountries] = useState([]);
+  // const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // const handleHowToPlayClick = () => {
+  //   setIsModalOpen(true);
+  // };
+
+  // const handleCloseModal = () => {
+  //   setIsModalOpen(false);
+  // };
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -39,24 +48,31 @@ function App() {
     });
     return () => unsubscribe();
   }, []);
+  console.log(userProfile);
 
   useEffect(() => {
     const fetchUserProfileAndStats = async () => {
       if (user) {
         try {
-          const profileResponse = await fetch(`${URL}/api/profile/${user.uid}`, {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
-          });
+          const profileResponse = await fetch(
+            `${URL}/api/profile/${user.uid}`,
+            {
+              headers: {
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
+              },
+            }
+          );
           const profileData = await profileResponse.json();
           setUserProfile(profileData);
 
-          const statsResponse = await fetch(`${URL}/api/stats/${profileData.id}`, {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
-          });
+          const statsResponse = await fetch(
+            `${URL}/api/stats/${profileData.id}`,
+            {
+              headers: {
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
+              },
+            }
+          );
           const statsData = await statsResponse.json();
           setUserStats(statsData);
           setIsLoading(false);
@@ -86,7 +102,7 @@ function App() {
 
   return (
     <div>
-      <Header user={user} />
+      <Header user={userProfile} />
       <Routes
         style={{
           display: "flex",
@@ -119,24 +135,38 @@ function App() {
 
         <Route
           path="/countries"
-          element={<CountriesPage countries={countries}/>}
+          element={
+            <CountriesPage
+            // isModalOpen={isModalOpen}
+            // setIsModalOpen={setIsModalOpen}
+            // countries={countries}
+            // handleHowToPlayClick={handleHowToPlayClick}
+            // handleCloseModal={handleCloseModal}
+            />
+          }
         />
         <Route
           path="/countries/:countryId/casefiles"
-          element={<CaseFilesPage countries={countries}/>}
+          element={<CaseFilesPage countries={countries} />}
         />
-          
+
         <Route
           path="/countries/:countryId/case_files/:caseFileId"
-          element={<CaseDetailsPage/>}
-          />
+          element={<CaseDetailsPage />}
+        />
         <Route
           path="/countries/:countryId/case_files/:caseFileId/questions"
-          element={<QuestionsPage user={user}/>}
-          />
+          element={<QuestionsPage user={user} />}
+        />
         <Route
           path="/countries/:countryId/case_files/:caseFileId/questions/results"
-          element={<ResultsPage user={user} userProfile={userProfile} userStats={userStats}/>} 
+          element={
+            <ResultsPage
+              user={user}
+              userProfile={userProfile}
+              userStats={userStats}
+            />
+          }
         />
         <Route path="*" element={<FofPage />} />
       </Routes>

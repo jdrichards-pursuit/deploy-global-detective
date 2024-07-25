@@ -125,7 +125,7 @@ h2 {
   }
 }
 /* Media Query for Mobile Devices */
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
   .nav-links {
     justify-content: space-between;
     width: 100%;
@@ -139,4 +139,4 @@ h2 {
   .nav-links a {
     font-size: 0.9rem;
   }
-}
+} */

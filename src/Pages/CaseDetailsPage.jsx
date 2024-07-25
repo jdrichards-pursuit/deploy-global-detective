@@ -64,11 +64,15 @@ const CaseDetailsPage = ({ translation }) => {
     <div>
       <div className="CaseDetailsPage">
         <div className="content">
-          <h1>{caseFile.article_title}</h1>
-          <img src={caseFile.photo_url} alt="Case" className="case-image" />
-          <p>
-            {showFullCase ? caseFile.article_content : caseFile.summary_young}
-          </p>
+          <section>
+            <h1>{caseFile.article_title}</h1>
+            <div className="image-container">
+              <img src={caseFile.photo_url} alt="Case" className="case-image" />
+            </div>
+            <p>
+              {showFullCase ? caseFile.article_content : caseFile.summary_young}
+            </p>
+          </section>
           <button onClick={toggleView} className="toggle-button">
             {showFullCase ? "View Summary" : "View Full Case File"}
           </button>
